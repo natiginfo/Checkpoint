@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.3.41"
 }
 
-group = "com.natigbabayev.checkpoint"
+group = "com.natigbabayev.checkpoint.core"
 version = "0.1.0"
 
 repositories {
@@ -13,6 +13,12 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
+    testImplementation("io.mockk:mockk:1.9.3")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile> {
