@@ -1,4 +1,4 @@
-package com.natigbabayev.checkpoint
+package com.natigbabayev.checkpoint.core
 
 abstract class DefaultRule<INPUT>(sideEffect: ((INPUT) -> Unit)?) :
     Rule<INPUT, Boolean>(sideEffect) {

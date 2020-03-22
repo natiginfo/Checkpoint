@@ -1,4 +1,4 @@
-package com.natigbabayev.checkpoint
+package com.natigbabayev.checkpoint.core
 
 class Checkpoint<INPUT>(
     private vararg val validators: DefaultRule<INPUT>
