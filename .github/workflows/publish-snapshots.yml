@@ -21,4 +21,4 @@ jobs:
 
     # Runs tests
     - name: Publish snapshot
-      run: ./gradlew -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" -PossrhPassword="${{ secrets.OSSRH_PASSWORD }}"  -PsigningKey="${{ secrets.GPG_KEY_CONTENTS }}" -PsigningPassword="${{ secrets.GPG_KEY_PASSWORD }}" publishAllPublicationsToMavenCentralRepository
+      run: ./gradlew -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" -Pversion=SNAPSHOT -PossrhPassword="${{ secrets.OSSRH_PASSWORD }}"  -PsigningKey="${{ secrets.GPG_KEY_CONTENTS }}" -PsigningPassword="${{ secrets.GPG_KEY_PASSWORD }}" publishAllPublicationsToMavenCentralRepository
