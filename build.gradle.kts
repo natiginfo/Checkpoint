@@ -52,10 +52,9 @@ val sourcesJar by tasks.creating(Jar::class) {
     from(sourceSets.main.get().allSource)
 }
 
-val OSSRH_USERNAME: String by project
-val OSSRH_PASSWORD: String by project
-
 publishing {
+    val ossrhUsername: String? by project
+    val ossrhPassword: String? by project
     repositories {
         maven {
             name = "MavenCentral"
@@ -63,8 +62,8 @@ publishing {
             val snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots"
             url = uri(if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl)
             credentials {
-                username = OSSRH_USERNAME
-                password = OSSRH_PASSWORD
+                username = ossrhUsername
+                password = ossrhPassword
             }
         }
     }
@@ -103,8 +102,8 @@ publishing {
 }
 
 signing {
-    val PGP_SIGNING_KEY: String? by project
-    val PGP_SIGNING_PASSWORD: String? by project
-    useInMemoryPgpKeys(PGP_SIGNING_KEY, PGP_SIGNING_PASSWORD)
+    val signingKey: String? by project
+    val signingPassword: String? by project
+    useInMemoryPgpKeys(signingKey, signingPassword)
     sign(configurations.archives.get())
 }
