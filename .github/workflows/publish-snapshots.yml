@@ -9,7 +9,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  publish snapshot:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +19,8 @@ jobs:
       with:
         java-version: 1.8
 
-    # Runs tests
     - name: Publish snapshot
-      run: ./gradlew -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" -Pversion=SNAPSHOT -PossrhPassword="${{ secrets.OSSRH_PASSWORD }}"  -PsigningKey="${{ secrets.GPG_KEY_CONTENTS }}" -PsigningPassword="${{ secrets.GPG_KEY_PASSWORD }}" publishAllPublicationsToMavenCentralRepository
+      run: |
+        ./gradlew -Pversion=SNAPSHOT -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" \
+        -PossrhPassword="${{ secrets.OSSRH_PASSWORD }}"  -PsigningKey="${{ secrets.GPG_KEY_CONTENTS }}" \
+        -PsigningPassword="${{ secrets.GPG_KEY_PASSWORD }}" publishAllPublicationsToMavenCentralRepository
