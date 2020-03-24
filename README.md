@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/natiginfo/checkpoint/badge)](https://www.codefactor.io/repository/github/natiginfo/checkpoint)
+
 # Checkpoint
 
 Multipurpose and customizable validation library
