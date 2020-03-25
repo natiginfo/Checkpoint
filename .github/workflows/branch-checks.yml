@@ -1,4 +1,4 @@
-name: Run tests
+name: Branch checks
 
 on:
   # When there's new push to any branch except master, this workflow will run.
