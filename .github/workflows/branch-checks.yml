@@ -3,7 +3,7 @@ name: Branch checks
 on:
   # When there's new push to any branch except master, this workflow will run.
   push:
-    branches-ignore: 
+    branches-ignore:
     - master
   # When there's a pull request for the master branch, this workflow will run.
   pull_request:
@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  
+
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -27,6 +27,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-        
+
     - name: Run tests
       run: ./gradlew test
