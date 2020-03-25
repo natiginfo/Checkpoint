@@ -1,0 +1,32 @@
+name: Run tests
+
+on:
+  # When there's new push to any branch except master, this workflow will run.
+  push:
+    branches: 
+    - '!master'
+  # When there's a pull request for the master branch, this workflow will run.
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: gradle/wrapper-validation-action@v1
+      - uses: vroy/gha-kotlin-linter@v2
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+        
+    - name: Run tests
+      run: ./gradlew test
