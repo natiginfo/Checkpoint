@@ -6,7 +6,6 @@ import io.mockk.verify
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-
 internal class TestableRule(sideEffect: ((String) -> Unit)?) : Rule<String, Boolean>(sideEffect) {
     override fun isValid(input: String): Boolean {
         TODO("not implemented")

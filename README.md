@@ -1,4 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/natiginfo/checkpoint/badge)](https://www.codefactor.io/repository/github/natiginfo/checkpoint)
+![](https://github.com/natiginfo/Checkpoint/workflows/Snapshot%20CI/badge.svg)
 
 # Checkpoint
 
