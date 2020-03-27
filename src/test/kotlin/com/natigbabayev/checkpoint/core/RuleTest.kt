@@ -6,7 +6,7 @@ import io.mockk.verify
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-internal class TestableRule(sideEffect: ((String) -> Unit)?) : Rule<String, Boolean>(sideEffect) {
+internal class TestableRule(callback: Callback<String>) : Rule<String, Boolean>(callback) {
     override fun isValid(input: String): Boolean {
         TODO("not implemented")
     }
@@ -15,31 +15,32 @@ internal class TestableRule(sideEffect: ((String) -> Unit)?) : Rule<String, Bool
         TODO("not implemented")
     }
 
-    fun testInvokeSideEffect(input: String, isValid: Boolean) {
-        invokeSideEffect(input, isValid)
+    fun testInvokeCallback(input: String, isValid: Boolean) {
+        invokeCallback(input, isValid)
     }
 }
 
 internal class RuleTest {
 
-    private val mockSideEffect = mockk<(String) -> Unit>()
+    private val mockCallback = mockk<Rule.Callback<String>>()
+
     @Suppress("PrivatePropertyName")
-    private val SUT = TestableRule(mockSideEffect)
+    private val SUT = TestableRule(mockCallback)
 
     @BeforeEach
     fun setup() {
-        every { mockSideEffect.invoke(any()) } returns Unit
+        every { mockCallback.whenInvalid(any()) } answers { nothing }
     }
 
     @Test
-    fun givenIsValidTrue_whenTestInvokeSideEffectCalled_thenSideEffectIsNeverInvoked() {
-        SUT.testInvokeSideEffect("input", true)
-        verify(exactly = 0) { mockSideEffect.invoke("input") }
+    fun givenIsValidTrue_whenTestInvokeCallbackCalled_thenCallbackNeverInvoked() {
+        SUT.testInvokeCallback("input", true)
+        verify(exactly = 0) { mockCallback.whenInvalid("input") }
     }
 
     @Test
-    fun givenIsValidFalse_whenTestInvokeSideEffectCalled_thenSideEffectIsInvoked() {
-        SUT.testInvokeSideEffect("input", false)
-        verify(exactly = 1) { mockSideEffect.invoke("input") }
+    fun givenIsValidFalse_whenTestInvokeCallbackCalled_thenCallbackIsInvoked() {
+        SUT.testInvokeCallback("input", false)
+        verify(exactly = 1) { mockCallback.whenInvalid("input") }
     }
 }
