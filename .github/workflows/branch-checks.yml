@@ -5,6 +5,7 @@ on:
   push:
     branches-ignore:
     - master
+    - gh-pages
   # When there's a pull request for the master branch, this workflow will run.
   pull_request:
     branches:
