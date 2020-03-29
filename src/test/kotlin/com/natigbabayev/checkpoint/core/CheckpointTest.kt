@@ -19,7 +19,7 @@ internal class CheckpointTest {
 
     @BeforeEach
     fun setup() {
-        SUT = Checkpoint.Builder<String>().addRule(mockRule1, mockRule2).build()
+        SUT = Checkpoint.Builder<String>().addRules(listOf(mockRule1, mockRule2)).build()
     }
 
     @Test

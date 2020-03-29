@@ -14,7 +14,9 @@ class Checkpoint<INPUT> private constructor(
     class Builder<INPUT> {
         private val rules = mutableListOf<DefaultRule<INPUT>>()
 
-        fun addRule(vararg rules: DefaultRule<INPUT>) = this.apply { this.rules += rules }
+        fun addRules(rules: List<DefaultRule<INPUT>>) = this.apply { this.rules += rules }
+
+        fun addRule(rule: DefaultRule<INPUT>) = this.apply { this.rules += rules }
 
         fun addRule(init: DefaultRuleBuilder<INPUT>.() -> Unit) {
             val defaultRuleBuilder = DefaultRuleBuilder<INPUT>()
