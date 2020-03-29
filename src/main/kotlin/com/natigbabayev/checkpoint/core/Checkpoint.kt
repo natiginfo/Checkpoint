@@ -10,6 +10,7 @@ class Checkpoint<INPUT> private constructor(
         return rules.firstOrNull { !it.canPass(input) } == null
     }
 
+    @CheckpointDslMarker
     class Builder<INPUT> {
         private val rules = mutableListOf<DefaultRule<INPUT>>()
 

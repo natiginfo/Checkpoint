@@ -3,6 +3,7 @@ package com.natigbabayev.checkpoint.core
 /**
  * Builder for creating instance of [DefaultRule] without extending it.
  */
+@CheckpointDslMarker
 class DefaultRuleBuilder<INPUT> {
     private var callback: Rule.Callback<INPUT>? = null
     private var predicate: ((input: INPUT) -> Boolean)? = null
