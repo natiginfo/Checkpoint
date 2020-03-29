@@ -23,25 +23,36 @@ internal class TestableRule(override val callback: Callback<String>) : Rule<Stri
 
 internal class RuleTest {
 
-    private val mockCallback = mockk<Rule.Callback<String>>()
-
     @Suppress("PrivatePropertyName")
-    private val SUT = TestableRule(mockCallback)
+    private lateinit var SUT: TestableRule
+
+    // region Mocks
+    private val mockCallback = mockk<Rule.Callback<String>>()
+    // endregion
 
     @BeforeEach
     fun setup() {
+        SUT = TestableRule(mockCallback)
         every { mockCallback.whenInvalid(any()) } answers { nothing }
     }
 
     @Test
     fun givenIsValidTrue_whenTestInvokeCallbackCalled_thenCallbackNeverInvoked() {
-        SUT.testInvokeCallback("input", true)
-        verify(exactly = 0) { mockCallback.whenInvalid("input") }
+        // Arrange
+        val input = "input"
+        // Act
+        SUT.testInvokeCallback(input, true)
+        // Assert
+        verify(exactly = 0) { mockCallback.whenInvalid(input) }
     }
 
     @Test
     fun givenIsValidFalse_whenTestInvokeCallbackCalled_thenCallbackIsInvoked() {
-        SUT.testInvokeCallback("input", false)
-        verify(exactly = 1) { mockCallback.whenInvalid("input") }
+        // Arrange
+        val input = "input"
+        // Act
+        SUT.testInvokeCallback(input, false)
+        // Assert
+        verify(exactly = 1) { mockCallback.whenInvalid(input) }
     }
 }
