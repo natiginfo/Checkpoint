@@ -10,7 +10,8 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-internal class TestableDefaultRule(sideEffect: ((String) -> Unit)?) : DefaultRule<String>(sideEffect) {
+internal class TestableDefaultRule(override val callback: Callback<String>?) : DefaultRule<String>() {
+
     @Suppress("PropertyName")
     var _isValid: Boolean = false
 
@@ -21,23 +22,24 @@ internal class TestableDefaultRule(sideEffect: ((String) -> Unit)?) : DefaultRul
 
 internal class DefaultRuleTest {
 
-    private val mockSideEffect = mockk<(String) -> Unit>()
+    private val mockCallback = mockk<Rule.Callback<String>>()
+
     @Suppress("PrivatePropertyName")
-    private val SUT = spyk(TestableDefaultRule(mockSideEffect))
+    private val SUT = spyk(TestableDefaultRule(mockCallback))
 
     @BeforeEach
     fun setup() {
-        every { mockSideEffect.invoke(any()) } returns Unit
+        every { mockCallback.whenInvalid(any()) } answers { nothing }
     }
 
     @Nested
     @DisplayName("Given invalid input")
     inner class GivenInvalidInput {
         @Test
-        fun whenCanPassCalled_thenSideEffectIsInvoked() {
+        fun whenCanPassCalled_thenCallbackIsInvoked() {
             SUT._isValid = false
             SUT.canPass("input")
-            verify(exactly = 1) { mockSideEffect.invoke("input") }
+            verify(exactly = 1) { mockCallback.whenInvalid("input") }
         }
 
         @Test
@@ -52,10 +54,10 @@ internal class DefaultRuleTest {
     @DisplayName("Given valid input")
     inner class GivenValidInput {
         @Test
-        fun whenCanPassCalled_thenSideEffectIsNeverInvoked() {
+        fun whenCanPassCalled_thenCallbackIsNeverInvoked() {
             SUT._isValid = true
             SUT.canPass("input")
-            verify(exactly = 0) { mockSideEffect.invoke("input") }
+            verify(exactly = 0) { mockCallback.whenInvalid("input") }
         }
 
         @Test

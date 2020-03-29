@@ -12,7 +12,7 @@ internal class CheckpointTest {
     private val mockRule2 = mockk<DefaultRule<String>>()
 
     @Suppress("PrivatePropertyName")
-    private val SUT = Checkpoint(mockRule1, mockRule2)
+    private val SUT = Checkpoint.Builder<String>().addRule(mockRule1, mockRule2).build()
 
     @Test
     fun givenAllRulesCanPass_whenCanPassCalled_thenReturnsTrue() {

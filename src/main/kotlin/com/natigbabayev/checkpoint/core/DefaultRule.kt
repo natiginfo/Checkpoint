@@ -1,11 +1,10 @@
 package com.natigbabayev.checkpoint.core
 
-abstract class DefaultRule<INPUT>(sideEffect: ((INPUT) -> Unit)?) :
-    Rule<INPUT, Boolean>(sideEffect) {
+abstract class DefaultRule<INPUT> : Rule<INPUT, Boolean>() {
 
     override fun canPass(input: INPUT): Boolean {
         val isValid = isValid(input)
-        invokeSideEffect(input, isValid)
+        invokeCallback(input, isValid)
         return isValid
     }
 }
