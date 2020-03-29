@@ -6,7 +6,8 @@ import io.mockk.verify
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-internal class TestableRule(callback: Callback<String>) : Rule<String, Boolean>(callback) {
+internal class TestableRule(override val callback: Callback<String>) : Rule<String, Boolean>() {
+
     override fun isValid(input: String): Boolean {
         TODO("not implemented")
     }

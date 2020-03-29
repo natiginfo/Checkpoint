@@ -10,7 +10,8 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-internal class TestableDefaultRule(callback: Callback<String>) : DefaultRule<String>(callback) {
+internal class TestableDefaultRule(override val callback: Callback<String>?) : DefaultRule<String>() {
+
     @Suppress("PropertyName")
     var _isValid: Boolean = false
 
