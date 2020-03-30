@@ -4,7 +4,7 @@ name: Snapshot CI
 # Triggers the workflow on push events but only for the master branch.
 on:
   push:
-    branches: [ master ]
+    branches: [ chore/5 ]
 
 jobs:
 
@@ -41,6 +41,9 @@ jobs:
 
     - name: Publish snapshot
       run: |
-        ./gradlew -Pversion=0.1.0-SNAPSHOT -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" \
+        commit_count=$(git rev-list --count HEAD)
+        echo "${commit_count}"
+        latest_tag=$(git describe --abbrev=0 --tags)
+        ./gradlew -Pversion="${latest_tag}-${commit_count}-SNAPSHOT" -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" \
         -PossrhPassword="${{ secrets.OSSRH_PASSWORD }}"  -PsigningKey="${{ secrets.GPG_KEY_CONTENTS }}" \
         -PsigningPassword="${{ secrets.GPG_KEY_PASSWORD }}" publishAllPublicationsToMavenCentralRepository
