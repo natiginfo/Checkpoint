@@ -34,11 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    - run: commit_count=$(git rev-list --count HEAD)
-    - env:
-      COMMIT_COUNT=$(git rev-list --count HEAD)
-
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -46,7 +41,7 @@ jobs:
 
     - name: Publish snapshot
       run: |
-        echo "${COMMIT_COUNT}"
-        ./gradlew -Pversion="-${COMMIT_COUNT}-SNAPSHOT" -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" \
+        echo "${$(git fetch --depth=1 origin +refs/tags/*:refs/tags/*)}"
+        ./gradlew -Pversion=0.1.0-SNAPSHOT -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" \
         -PossrhPassword="${{ secrets.OSSRH_PASSWORD }}"  -PsigningKey="${{ secrets.GPG_KEY_CONTENTS }}" \
         -PsigningPassword="${{ secrets.GPG_KEY_PASSWORD }}" publishAllPublicationsToMavenCentralRepository
