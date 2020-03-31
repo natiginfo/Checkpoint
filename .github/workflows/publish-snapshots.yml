@@ -34,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -41,6 +43,6 @@ jobs:
 
     - name: Publish snapshot
       run: |
-        ./gradlew -Pversion=0.1.0-SNAPSHOT -PossrhUsername="${{ secrets.OSSRH_USERNAME }}" \
-        -PossrhPassword="${{ secrets.OSSRH_PASSWORD }}"  -PsigningKey="${{ secrets.GPG_KEY_CONTENTS }}" \
-        -PsigningPassword="${{ secrets.GPG_KEY_PASSWORD }}" publishAllPublicationsToMavenCentralRepository
+        chmod +x ./publish_to_maven.sh
+        ./publish_to_maven.sh "SNAPSHOT" "${{ secrets.OSSRH_USERNAME }}" "${{ secrets.OSSRH_PASSWORD }}" \
+                "${{ secrets.GPG_KEY_CONTENTS }}" "${{ secrets.GPG_KEY_PASSWORD }}"
