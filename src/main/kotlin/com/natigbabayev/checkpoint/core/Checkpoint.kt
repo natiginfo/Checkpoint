@@ -1,5 +1,11 @@
 package com.natigbabayev.checkpoint.core
 
+/**
+ * Child of [DefaultRule] which accepts list of [DefaultRule].
+ * When [Checkpoint.canPass] is invoked, function will go through all of the passed rules
+ * and invoke [DefaultRule.canPass] of each rule until first item that cannot pass.
+ * Create instance of class using [Checkpoint.Builder] or [checkpoint] dsl.
+ */
 class Checkpoint<INPUT> private constructor(
     private val rules: List<DefaultRule<INPUT>>
 ) : DefaultRule<INPUT>() {
