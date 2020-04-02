@@ -6,7 +6,7 @@ package com.natigbabayev.checkpoint.core
 abstract class DefaultRule<INPUT> : Rule<INPUT, Boolean>() {
 
     /**
-     * This function should invokes [Rule.isValid] with given input
+     * This function invokes [Rule.isValid] with given input
      * and passes result to [Rule.invokeCallback].
      */
     override fun canPass(input: INPUT): Boolean {
