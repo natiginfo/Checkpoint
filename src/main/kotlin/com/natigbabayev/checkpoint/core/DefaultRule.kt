@@ -1,7 +1,7 @@
 package com.natigbabayev.checkpoint.core
 
 /**
- * Child of [Rule] with [Boolean] output
+ * Child of [Rule] with [Boolean] output.
  */
 abstract class DefaultRule<INPUT> : Rule<INPUT, Boolean>() {
 
