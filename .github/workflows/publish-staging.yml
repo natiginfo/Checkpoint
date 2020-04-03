@@ -81,6 +81,7 @@ jobs:
 
       - name: Commit changes
         run: |
+          ls .
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -am "Javadoc at $(date)"
