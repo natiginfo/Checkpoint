@@ -76,6 +76,7 @@ jobs:
       - name: Unzip javadoc
         run: |
           rm -rf javadoc
+          mkdir javadoc
           unzip libs/core-javadoc.jar -d javadoc
           rm -rf libs
 
@@ -85,6 +86,7 @@ jobs:
           ls javadoc
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git add javadoc
           git commit -m "Javadoc at $(date)" -a
 
       - name: Push changes
