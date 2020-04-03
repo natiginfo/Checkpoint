@@ -5,7 +5,7 @@ name: Staging CI
 on:
   push:
     tags:
-    - '*'
+      - '*'
 
 jobs:
 
