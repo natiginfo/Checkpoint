@@ -2,14 +2,10 @@ name: Staging CI
 
 # Publishes staging builds. This workflow has validate, test and publish stages.
 # Triggers the workflow whenever new tag is pushed.
-#on:
-#  push:
-#    tags:
-#      - '*'
-
 on:
   push:
-    branches: [ chore/12 ]
+    tags:
+      - '*'
 
 jobs:
 
@@ -47,13 +43,14 @@ jobs:
           java-version: 1.8
 
       - name: Publish staging
-#        env:
-#          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-#          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-#          GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
-#          GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
+          GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
         run: |
-          ./gradlew dokkaJar
+          chmod +x .scripts/publish_to_maven.sh
+          .scripts/publish_to_maven.sh "STAGING"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
@@ -82,12 +79,10 @@ jobs:
 
       - name: Commit changes
         run: |
-          ls .
-          ls javadoc
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add javadoc
-          git commit -m "Javadoc at $(date)" -a
+          git commit -m "Javadoc at $(date)"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
