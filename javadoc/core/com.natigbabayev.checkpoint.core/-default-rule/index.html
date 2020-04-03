@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DefaultRule - core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">core</a>&nbsp;/&nbsp;<a href="../index.html">com.natigbabayev.checkpoint.core</a>&nbsp;/&nbsp;<a href="./index.html">DefaultRule</a><br/>
+<br/>
+<h1>DefaultRule</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-rule/index.html"><span class="identifier">Rule</span></a><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code>
+<p>Child of <a href="../-rule/index.html">Rule</a> with <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> output.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Child of <a href="../-rule/index.html">Rule</a> with <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> output.</p>
+<code><span class="identifier">DefaultRule</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="can-pass.html">canPass</a></h4>
+</td>
+<td>
+<p>This function invokes <a href="../-rule/is-valid.html">Rule.isValid</a> with given input
+and passes result to <a href="../-rule/invoke-callback.html">Rule.invokeCallback</a>.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">canPass</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.DefaultRule$canPass(com.natigbabayev.checkpoint.core.DefaultRule.INPUT)/input">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">INPUT</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-checkpoint/index.html">Checkpoint</a></h4>
+</td>
+<td>
+<p>Child of <a href="./index.html">DefaultRule</a> which accepts list of <a href="./index.html">DefaultRule</a>.
+When <a href="can-pass.html">Checkpoint.canPass</a> is invoked, function will go through all of the passed rules
+and invoke <a href="can-pass.html">DefaultRule.canPass</a> of each rule until first item that cannot pass.
+Create instance of class using <a href="../-checkpoint/-builder/index.html">Checkpoint.Builder</a> or <a href="../checkpoint.html">checkpoint</a> dsl.</p>
+<code><span class="keyword">class </span><span class="identifier">Checkpoint</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultRule</span></a><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
