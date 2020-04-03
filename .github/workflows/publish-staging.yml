@@ -80,7 +80,10 @@ jobs:
           rm -rf libs
 
       - name: Commit changes
-        run: git commit -am "Javadoc at $(date)"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Javadoc at $(date)"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
