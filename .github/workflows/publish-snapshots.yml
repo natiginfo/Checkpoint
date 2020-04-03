@@ -43,6 +43,6 @@ jobs:
 
     - name: Publish snapshot
       run: |
-        chmod +x ./publish_to_maven.sh
-        ./publish_to_maven.sh "SNAPSHOT" "${{ secrets.OSSRH_USERNAME }}" "${{ secrets.OSSRH_PASSWORD }}" \
+        chmod +x .scripts/publish_to_maven.sh
+        .scripts/publish_to_maven.sh "SNAPSHOT" "${{ secrets.OSSRH_USERNAME }}" "${{ secrets.OSSRH_PASSWORD }}" \
                 "${{ secrets.GPG_KEY_CONTENTS }}" "${{ secrets.GPG_KEY_PASSWORD }}"
