@@ -2,10 +2,14 @@ name: Staging CI
 
 # Publishes staging builds. This workflow has validate, test and publish stages.
 # Triggers the workflow whenever new tag is pushed.
+#on:
+#  push:
+#    tags:
+#      - '*'
+
 on:
   push:
-    tags:
-      - '*'
+    branches: [ chore/12 ]
 
 jobs:
 
@@ -43,11 +47,43 @@ jobs:
           java-version: 1.8
 
       - name: Publish staging
-        env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-          GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
-          GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
+#        env:
+#          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+#          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+#          GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
+#          GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
         run: |
-          chmod +x .scripts/publish_to_maven.sh
-          .scripts/publish_to_maven.sh "STAGING"
+          ./gradlew dokkaJar
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: libs
+          path: build/libs
+
+  deploy-javadoc:
+    needs: publish
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - uses: actions/download-artifact@v1
+        with:
+          name: libs
+
+      - name: Unzip javadoc
+        run: |
+          rm -rf javadoc
+          unzip libs/core-javadoc.jar -d javadoc
+          rm -rf libs
+
+      - name: Commit changes
+        run: git commit -am "Javadoc at $(date)"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
