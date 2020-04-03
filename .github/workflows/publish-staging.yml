@@ -82,9 +82,10 @@ jobs:
       - name: Commit changes
         run: |
           ls .
+          ls javadoc
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -am "Javadoc at $(date)"
+          git commit -m "Javadoc at $(date)" -a
 
       - name: Push changes
         uses: ad-m/github-push-action@master
