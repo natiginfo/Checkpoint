@@ -18,7 +18,7 @@ class DefaultRuleBuilder<INPUT> {
     /**
      * @param callback which will be invoked when [DefaultRule.canPass] returns false.
      */
-    fun callback(callback: Rule.Callback<INPUT>) = apply {
+    fun whenInvalid(callback: Rule.Callback<INPUT>) = apply {
         this.callback = callback
     }
 
