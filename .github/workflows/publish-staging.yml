@@ -63,6 +63,7 @@ jobs:
 
   deploy-javadoc:
     needs: publish
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
