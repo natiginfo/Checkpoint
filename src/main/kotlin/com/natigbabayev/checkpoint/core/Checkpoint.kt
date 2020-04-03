@@ -22,7 +22,7 @@ class Checkpoint<INPUT> private constructor(
 
         fun addRules(rules: List<DefaultRule<INPUT>>) = this.apply { this.rules += rules }
 
-        fun addRule(rule: DefaultRule<INPUT>) = this.apply { this.rules += rules }
+        fun addRule(rule: DefaultRule<INPUT>) = this.apply { this.rules += rule }
 
         fun addRule(init: DefaultRuleBuilder<INPUT>.() -> Unit) {
             val defaultRuleBuilder = DefaultRuleBuilder<INPUT>()
