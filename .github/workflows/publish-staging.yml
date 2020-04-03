@@ -1,6 +1,6 @@
-name: Snapshot CI
+name: Staging CI
 
-# Publishes snapshot builds. This workflow has validate, test and publish stages.
+# Publishes staging builds. This workflow has validate, test and publish stages.
 # Triggers the workflow on push events but only for the master branch.
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
 
   publish:
     # We don't want to publish anything unless validate and test jobs pass.
-    # Any failure of validate and test will prevent snapshot publishing.
+    # Any failure of validate and test will prevent publishing.
     needs: [validate, test]
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +41,7 @@ jobs:
       with:
         java-version: 1.8
 
-    - name: Publish snapshot
+    - name: Publish staging
       env:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
@@ -49,4 +49,4 @@ jobs:
         GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
       run: |
         chmod +x .scripts/publish_to_maven.sh
-        .scripts/publish_to_maven.sh "SNAPSHOT"
+        .scripts/publish_to_maven.sh "STAGING"

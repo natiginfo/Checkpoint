@@ -21,11 +21,6 @@ else
   final_version="${version}"
 fi
 
-ossrh_username=$2
-ossrh_password=$3
-gpg_key_contents=$4
-gpg_key_password=$5
-
-./gradlew -Pversion="${final_version}" -PossrhUsername="${ossrh_username}" \
-  -PossrhPassword="${ossrh_password}" -PsigningKey="${gpg_key_contents}" \
-  -PsigningPassword="${gpg_key_password}" publishAllPublicationsToMavenCentralRepository
+./gradlew -Pversion="${final_version}" -PossrhUsername="${OSSRH_USERNAME}" \
+  -PossrhPassword="${OSSRH_PASSWORD}" -PsigningKey="${GPG_KEY_CONTENTS}" \
+  -PsigningPassword="${GPG_KEY_PASSWORD}" publishAllPublicationsToMavenCentralRepository
