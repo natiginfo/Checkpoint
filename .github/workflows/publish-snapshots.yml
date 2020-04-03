@@ -18,14 +18,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
 
-    - name: Run tests
-      run: ./gradlew test
+      - name: Run tests
+        run: ./gradlew test
 
   publish:
     # We don't want to publish anything unless validate and test jobs pass.
@@ -33,20 +33,20 @@ jobs:
     needs: [validate, test]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
 
-    - name: Publish snapshot
-      env:
-        OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-        OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
-        GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
-      run: |
-        chmod +x .scripts/publish_to_maven.sh
-        .scripts/publish_to_maven.sh "SNAPSHOT"
+      - name: Publish snapshot
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
+          GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
+        run: |
+          chmod +x .scripts/publish_to_maven.sh
+          .scripts/publish_to_maven.sh "SNAPSHOT"
