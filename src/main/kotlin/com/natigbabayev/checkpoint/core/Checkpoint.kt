@@ -24,12 +24,6 @@ class Checkpoint<INPUT> private constructor(
 
         fun addRule(rule: DefaultRule<INPUT>) = this.apply { this.rules += rule }
 
-        fun addRule(init: DefaultRuleBuilder<INPUT>.() -> Unit) {
-            val defaultRuleBuilder = DefaultRuleBuilder<INPUT>()
-            defaultRuleBuilder.init()
-            rules += defaultRuleBuilder.build()
-        }
-
         fun build(): Checkpoint<INPUT> {
             check(rules.isNotEmpty()) { "You should set at least 1 rule." }
             return Checkpoint(rules = rules)
