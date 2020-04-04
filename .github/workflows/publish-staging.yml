@@ -58,6 +58,12 @@ jobs:
           name: libs
           path: build/libs
 
+      - name: Upload Readme
+        uses: actions/upload-artifact@v1
+        with:
+          name: readme
+          path: README.md
+
   deploy-javadoc:
     needs: publish
     runs-on: ubuntu-latest
@@ -70,11 +76,15 @@ jobs:
         with:
           name: libs
 
+      - uses: actions/download-artifact@v1
+        with:
+          name: readme
+
       - name: Unzip javadoc
         run: |
           rm -rf javadoc
           mkdir javadoc
-          unzip libs/core-javadoc.jar -d javadoc
+          unzip libs/core-*-javadoc.jar -d javadoc
           rm -rf libs
 
       - name: Commit changes
@@ -82,6 +92,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add javadoc
+          mv readme/* .
+          git add README.md
           git commit -m "Javadoc at $(date)"
 
       - name: Push changes
