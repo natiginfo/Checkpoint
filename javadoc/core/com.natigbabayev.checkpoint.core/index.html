@@ -66,11 +66,26 @@ When new rule is needed, this class can be extended with the desired input and o
 <tbody>
 <tr>
 <td>
+<h4><a href="add-rule.html">addRule</a></h4>
+</td>
+<td>
+<p>Executes the given builder block and adds created rule to <a href="-checkpoint/-builder/index.html">Checkpoint.Builder</a>.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">Builder</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">addRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core$addRule(com.natigbabayev.checkpoint.core.Checkpoint.Builder((com.natigbabayev.checkpoint.core.addRule.T)), kotlin.Function1((com.natigbabayev.checkpoint.core.DefaultRuleBuilder((com.natigbabayev.checkpoint.core.addRule.T)), kotlin.Unit)))/init">init</span><span class="symbol">:</span>&nbsp;<a href="-default-rule-builder/index.html"><span class="identifier">DefaultRuleBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
 <h4><a href="checkpoint.html">checkpoint</a></h4>
 </td>
 <td>
 <p>Executes the given builder block.</p>
 <code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">checkpoint</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core$checkpoint(kotlin.Function1((com.natigbabayev.checkpoint.core.Checkpoint.Builder((com.natigbabayev.checkpoint.core.checkpoint.T)), kotlin.Unit)))/init">init</span><span class="symbol">:</span>&nbsp;<span class="identifier">Builder</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-checkpoint/index.html"><span class="identifier">Checkpoint</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="when-invalid.html">whenInvalid</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-default-rule-builder/index.html"><span class="identifier">DefaultRuleBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core$whenInvalid(com.natigbabayev.checkpoint.core.DefaultRuleBuilder((com.natigbabayev.checkpoint.core.whenInvalid.T)), kotlin.Function1((com.natigbabayev.checkpoint.core.whenInvalid.T, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-default-rule-builder/index.html"><span class="identifier">DefaultRuleBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
 </tr>
 </tbody>
 </table>
