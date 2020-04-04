@@ -9,13 +9,6 @@ class DefaultRuleBuilder<INPUT> {
     private var predicate: ((input: INPUT) -> Boolean)? = null
 
     /**
-     * @param block a lambda which can be invoked when [DefaultRule.canPass] returns false.
-     */
-    fun whenInvalid(block: (input: INPUT) -> Unit) = apply {
-        this.callback = Rule.Callback { block(it) }
-    }
-
-    /**
      * @param callback which will be invoked when [DefaultRule.canPass] returns false.
      */
     fun whenInvalid(callback: Rule.Callback<INPUT>) = apply {
