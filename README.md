@@ -5,6 +5,22 @@
 
 Multipurpose and customizable validation library
 
+## Download
+
+Maven:
+```xml
+<dependency>
+  <groupId>com.natigbabayev.checkpoint</groupId>
+  <artifactId>core</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
+Gradle:
+```groovy
+implementation 'com.natigbabayev.checkpoint:core:0.1.0'
+```
+
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
 
 ## License
