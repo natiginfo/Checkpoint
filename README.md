@@ -102,6 +102,27 @@ Checkpoint has several base classes which can be used for creating custom checkp
 
   - [`com.natigbabayev.checkpoint.core.Rule`][rule]
   - [`com.natigbabayev.checkpoint.core.DefaultRule`][default-rule]
+  
+
+Creating new rule:
+
+```kotlin
+class NotEmpty(override val callback: Callback<String>) : DefaultRule<String>() {
+    override fun isValid(input: String): Boolean {
+        return input.isNotEmpty()
+    }
+}
+
+fun main() {
+    val rule = NotEmpty(
+        Rule.Callback { println("Cannot be empty") }
+    )
+    
+    val checkpoint = Checkpoint.Builder()
+        .addRule(rule)
+        .build()
+}
+```
 
 ## License
 
