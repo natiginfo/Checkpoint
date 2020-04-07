@@ -7,7 +7,9 @@
 
 Multipurpose and customizable validation library
 
-## Download
+## Getting started
+
+### Download
 
 Maven:
 ```xml
@@ -28,6 +30,79 @@ implementation 'com.natigbabayev.checkpoint:core:x.y.z'
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
 
+### Usage
+
+Checkpoint allows you to perform validation checks for given input. [`Checkpoint`][checkpoint] is generic collection of 
+[rules][rule] with `boolean` output. You can create new instance of Checkpoint either by using builder or dsl:
+
+#### Builder
+
+```kotlin
+fun main() {
+    val pinCheckpoint = Checkpoint.Builder<String>()
+        .addRule(
+            DefaultRuleBuilder<String>()
+                .isValid { it.length >= 4 }
+                .whenInvalid { println("Must contain min. 4 characters") }
+                .build()
+        )
+        .addRule(
+            DefaultRuleBuilder<String>()
+                .isValid { it.contains("@") || it.contains("!") }
+                .whenInvalid { println("Must contain at least one of the @ or ! characters.") }
+                .build()
+        )
+        .addRule(
+            DefaultRuleBuilder<String>()
+                .isValid { it.length <= 6 }
+                .whenInvalid { println("Must contain max. 6 characters") }
+                .build()
+        )
+        .build()
+
+    pinCheckpoint.canPass("123") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234@6!") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234@6") // returns true
+}
+```
+
+
+#### DSL
+
+```kotlin
+fun main() {
+    val pinCheckpoint = checkpoint<String> {
+        addRule {
+            isValid { it.length >= 4 }
+            whenInvalid { println("Must contain min. 4 characters") }
+        }
+
+        addRule {
+            isValid { it.contains("@") || it.contains("!") }
+            whenInvalid { println("Must contain at least one of the @ or ! characters.") }
+        }
+
+        addRule {
+            isValid { it.length <= 6 }
+            whenInvalid { println("Must contain max. 6 characters") }
+        }
+    }
+
+    pinCheckpoint.canPass("123") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234@6!") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234@6") // returns true
+}
+```
+
+### Base classes
+
+Checkpoint has several base classes which can be used for creating custom checkpoints and rules:
+
+  - [`com.natigbabayev.checkpoint.core.Rule`][rule]
+  - [`com.natigbabayev.checkpoint.core.DefaultRule`][default-rule]
+
 ## License
 
 ```
@@ -46,3 +121,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 [snap]: https://oss.sonatype.org/content/repositories/snapshots/
+[rule]: https://www.natigbabayev.com/Checkpoint/javadoc/core/com.natigbabayev.checkpoint.core/-rule/index.html
+[default-rule]: https://www.natigbabayev.com/Checkpoint/javadoc/core/com.natigbabayev.checkpoint.core/-default-rule/index.html
+[checkpoint]: https://www.natigbabayev.com/Checkpoint/javadoc/core/com.natigbabayev.checkpoint.core/-checkpoint/index.html
