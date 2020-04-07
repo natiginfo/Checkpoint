@@ -1,5 +1,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/natiginfo/checkpoint/badge)](https://www.codefactor.io/repository/github/natiginfo/checkpoint)
 ![Snapshot CI](https://github.com/natiginfo/Checkpoint/workflows/Snapshot%20CI/badge.svg?branch=master)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core)
+
 
 # Checkpoint
 
@@ -12,14 +14,17 @@ Maven:
 <dependency>
   <groupId>com.natigbabayev.checkpoint</groupId>
   <artifactId>core</artifactId>
-  <version>0.1.0</version>
+  <version>x.y.z</version>
 </dependency>
 ```
 
 Gradle:
 ```groovy
-implementation 'com.natigbabayev.checkpoint:core:0.1.0'
+implementation 'com.natigbabayev.checkpoint:core:x.y.z'
 ```
+
+(Please replace `x`, `y` and `z` with the latest version numbers: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core)
+)
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
 
