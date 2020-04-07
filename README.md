@@ -33,7 +33,7 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
 ### Usage
 
 Checkpoint allows you to perform validation checks for given input. [`Checkpoint`][checkpoint] is generic collection of 
-[rules with boolean output][default-rule]. You can create new instance of Checkpoint either by using builder or dsl:
+[rules with boolean output][default-rule]. You can create new instance of Checkpoint either by using builder or DSL:
 
 #### Builder
 
