@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # If last tag is defined, gets commit count since that tag. Otherwise, gets total commit count
-if latest_tag=$(git describe --tags $(git rev-list --tags --max-count=1)); then
+if latest_tag="${LATEST_TAG}"; then
   echo "Latest tag is defined"
   commit_count=$(git rev-list --count "${latest_tag}"..HEAD)
 else
@@ -9,12 +9,7 @@ else
   commit_count=$(git rev-list --count HEAD)
 fi
 
-# Get latest tag and if it's not defined, version will be 0.1.0
-if latest_tag=$(git describe --tags $(git rev-list --tags --max-count=1)); then
-  version="${latest_tag}"
-else
-  version="0.1.0"
-fi
+version="${LATEST_TAG}"
 
 # If it's snapshot build, version will be
 if [ "$1" = "SNAPSHOT" ]; then
