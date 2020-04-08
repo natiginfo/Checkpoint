@@ -2,8 +2,10 @@
 
 # If last tag is defined, gets commit count since that tag. Otherwise, gets total commit count
 if latest_tag=$(git describe --abbrev=0 --tags); then
+  echo "Latest tag is defined"
   commit_count=$(git rev-list --count "${latest_tag}"..HEAD)
 else
+  echo "Latest tag is not defined"
   commit_count=$(git rev-list --count HEAD)
 fi
 
