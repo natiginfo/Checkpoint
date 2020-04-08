@@ -38,12 +38,6 @@ jobs:
           fetch-depth: '0'
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
-      - name: Get Previous tag
-        id: previoustag
-        uses: "WyriHaximus/github-action-get-previous-tag@master"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
@@ -51,7 +45,6 @@ jobs:
 
       - name: Publish snapshot
         env:
-          LATEST_TAG: ${{ steps.previoustag.outputs.tag }}
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
           GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
