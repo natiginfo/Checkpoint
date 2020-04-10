@@ -1,2 +1,2 @@
-rootProject.name = "core"
-
+include("checkpoint-core-abstraction")
+include("checkpoint-core")
