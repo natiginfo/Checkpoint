@@ -17,13 +17,9 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
-    testImplementation("io.mockk:mockk:1.9.3")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+apply(from = "gradle/gradle-test-dependencies.gradle.kts")
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
