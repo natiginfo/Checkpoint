@@ -22,12 +22,12 @@ class LengthRangeRule private constructor(
         fun whenInvalid(callback: Callback<CharSequence>?) = apply { this.callback = callback }
 
         /**
-         * @param length provides minimum length. If not provided, minLength will be equal to 0.
+         * @param length provides minimum length. If not provided, minLength will be set to 0.
          */
         fun minLength(length: Int) = apply { this.minLength = length }
 
         /**
-         * @param length provides max length. If not provided, minLength will be equal to [Int.MAX_VALUE]
+         * @param length provides max length. If not provided, minLength will be set to [Int.MAX_VALUE]
          */
         fun maxLength(length: Int) = apply { this.maxLength = length }
 

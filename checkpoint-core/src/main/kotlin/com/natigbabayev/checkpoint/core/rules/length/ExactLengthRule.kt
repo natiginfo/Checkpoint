@@ -19,6 +19,9 @@ class ExactLengthRule private constructor(
 
         fun whenInvalid(callback: Callback<CharSequence>?) = apply { this.callback = callback }
 
+        /**
+         * @param length if not provided, will be set to 0.
+         */
         fun length(length: Int) = apply { this.length = length }
 
         fun build() = ExactLengthRule(length = length, callback = callback)
