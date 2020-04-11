@@ -14,11 +14,16 @@ inline fun ExactLengthRule.Builder.whenInvalid(crossinline block: (input: CharSe
 /**
  * Executes the given builder block.
  *
- * @param init builder block.
+ * @param whenInvalid a lambda which will be invoked when [ExactLengthRule.canPass] returns false.
  * @return returns instance of [ExactLengthRule]
  */
-inline fun exactLengthRule(init: ExactLengthRule.Builder.() -> Unit): ExactLengthRule {
+inline fun exactLengthRule(
+    length: Int,
+    crossinline whenInvalid: (input: CharSequence) -> Unit
+): ExactLengthRule {
     val builder = ExactLengthRule.Builder()
-    builder.init()
+        .length(length)
+        .whenInvalid(Rule.Callback { whenInvalid(it) })
+
     return builder.build()
 }

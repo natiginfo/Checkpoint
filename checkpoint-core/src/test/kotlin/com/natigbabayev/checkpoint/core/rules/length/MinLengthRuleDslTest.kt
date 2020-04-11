@@ -22,10 +22,7 @@ internal class MinLengthRuleDslTest {
 
     @BeforeEach
     fun setup() {
-        SUT = minLengthRule {
-            minLength(3)
-            whenInvalid(mockWhenInvalid)
-        }
+        SUT = minLengthRule(minLength = 3, whenInvalid = mockWhenInvalid)
     }
 
     @Nested

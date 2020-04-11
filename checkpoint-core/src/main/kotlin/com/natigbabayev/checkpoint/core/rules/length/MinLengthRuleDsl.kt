@@ -14,11 +14,15 @@ inline fun MinLengthRule.Builder.whenInvalid(crossinline block: (input: CharSequ
 /**
  * Executes the given builder block.
  *
- * @param init builder block.
+ * @param whenInvalid a lambda which will be invoked when [MinLengthRule.canPass] returns false.
  * @return returns instance of [MinLengthRule]
  */
-inline fun minLengthRule(init: MinLengthRule.Builder.() -> Unit): MinLengthRule {
+inline fun minLengthRule(
+    minLength: Int,
+    crossinline whenInvalid: (CharSequence) -> Unit
+): MinLengthRule {
     val builder = MinLengthRule.Builder()
-    builder.init()
+        .minLength(minLength)
+        .whenInvalid(Rule.Callback { whenInvalid(it) })
     return builder.build()
 }

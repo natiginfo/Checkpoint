@@ -22,10 +22,7 @@ internal class ExactLengthRuleDslTest {
 
     @BeforeEach
     fun setup() {
-        SUT = exactLengthRule {
-            length(5)
-            whenInvalid(mockWhenInvalid)
-        }
+        SUT = exactLengthRule(5, mockWhenInvalid)
     }
 
     @Nested

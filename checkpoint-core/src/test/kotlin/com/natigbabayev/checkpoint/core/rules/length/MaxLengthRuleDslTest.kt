@@ -1,13 +1,12 @@
 package com.natigbabayev.checkpoint.core.rules.length
 
-import com.natigbabayev.checkpoint.core.Rule
 import io.mockk.confirmVerified
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
-
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -23,10 +22,7 @@ internal class MaxLengthRuleDslTest {
 
     @BeforeEach
     fun setUp() {
-        SUT = maxLengthRule {
-            maxLength(3)
-            whenInvalid(mockWhenInvalid)
-        }
+        SUT = maxLengthRule(maxLength = 3, whenInvalid = mockWhenInvalid)
     }
 
     @Nested

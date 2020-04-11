@@ -14,11 +14,17 @@ inline fun LengthRangeRule.Builder.whenInvalid(crossinline block: (input: CharSe
 /**
  * Executes the given builder block.
  *
- * @param init builder block.
+ * @param whenInvalid a lambda which will be invoked when [LengthRangeRule.canPass] returns false.
  * @return returns instance of [LengthRangeRule]
  */
-inline fun lengthRangeRule(init: LengthRangeRule.Builder.() -> Unit): LengthRangeRule {
+inline fun lengthRangeRule(
+    minLength: Int = 0,
+    maxLength: Int = Int.MAX_VALUE,
+    crossinline whenInvalid: (input: CharSequence) -> Unit
+): LengthRangeRule {
     val builder = LengthRangeRule.Builder()
-    builder.init()
+        .minLength(minLength)
+        .maxLength(maxLength)
+        .whenInvalid(Rule.Callback { whenInvalid(it) })
     return builder.build()
 }

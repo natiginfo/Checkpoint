@@ -14,11 +14,15 @@ inline fun MaxLengthRule.Builder.whenInvalid(crossinline block: (CharSequence) -
 /**
  * Executes the given builder block.
  *
- * @param init builder block.
- * @return returns instance of [ExactLengthRule]
+ * @param whenInvalid a lambda which will be invoked when [MaxLengthRule.canPass] returns false.
+ * @return returns instance of [MaxLengthRule]
  */
-inline fun maxLengthRule(init: MaxLengthRule.Builder.() -> Unit): MaxLengthRule {
+inline fun maxLengthRule(
+    maxLength: Int,
+    crossinline whenInvalid: (CharSequence) -> Unit
+): MaxLengthRule {
     val builder = MaxLengthRule.Builder()
-    builder.init()
+        .maxLength(maxLength)
+        .whenInvalid(Rule.Callback { whenInvalid(it) })
     return builder.build()
 }

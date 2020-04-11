@@ -21,12 +21,7 @@ internal class LengthRangeRuleDslTest {
 
     @BeforeEach
     fun setup() {
-        SUT = lengthRangeRule {
-            whenInvalid(mockWhenInvalid)
-            minLength(3)
-            maxLength(6)
-
-        }
+        SUT = lengthRangeRule(minLength = 3, maxLength = 6, whenInvalid = mockWhenInvalid)
     }
 
     @Nested
