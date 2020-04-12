@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>alltypes - checkpoint-core-abstraction</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<h3>All Types</h3>
+<table>
+<tbody>
+<tr>
+<h5><a href="../com.natigbabayev.checkpoint.core/-checkpoint/index.html">com.natigbabayev.checkpoint.core.Checkpoint</a></h5>
+<p>Child of <a href="../com.natigbabayev.checkpoint.core/-default-rule/index.html">DefaultRule</a> which accepts list of <a href="../com.natigbabayev.checkpoint.core/-default-rule/index.html">DefaultRule</a>.
+When <a href="../com.natigbabayev.checkpoint.core/-default-rule/can-pass.html">Checkpoint.canPass</a> is invoked, function will go through all of the passed rules
+and invoke <a href="../com.natigbabayev.checkpoint.core/-default-rule/can-pass.html">DefaultRule.canPass</a> of each rule until first item that cannot pass.
+Create instance of class using <a href="../com.natigbabayev.checkpoint.core/-checkpoint/-builder/index.html">Checkpoint.Builder</a> or <a href="../com.natigbabayev.checkpoint.core/checkpoint.html">checkpoint</a> dsl.</p>
+</tr>
+<tr>
+<h5><a href="../com.natigbabayev.checkpoint.core/-checkpoint-dsl-marker/index.html">com.natigbabayev.checkpoint.core.CheckpointDslMarker</a></h5>
+</tr>
+<tr>
+<h5><a href="../com.natigbabayev.checkpoint.core/-default-rule/index.html">com.natigbabayev.checkpoint.core.DefaultRule</a></h5>
+<p>Child of <a href="../com.natigbabayev.checkpoint.core/-rule/index.html">Rule</a> with <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> output.</p>
+</tr>
+<tr>
+<h5><a href="../com.natigbabayev.checkpoint.core/-default-rule-builder/index.html">com.natigbabayev.checkpoint.core.DefaultRuleBuilder</a></h5>
+<p>Builder for creating instance of <a href="../com.natigbabayev.checkpoint.core/-default-rule/index.html">DefaultRule</a> without extending it.</p>
+</tr>
+<tr>
+<h5><a href="../com.natigbabayev.checkpoint.core/-rule/index.html">com.natigbabayev.checkpoint.core.Rule</a></h5>
+<p>Rules are main part of checkpoint. <a href="../com.natigbabayev.checkpoint.core/-rule/can-pass.html">Rule.canPass</a> function can be invoked directly or used by child classes.
+When new rule is needed, this class can be extended with the desired input and output type.</p>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

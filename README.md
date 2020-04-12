@@ -22,7 +22,7 @@ Maven:
 
 Gradle:
 ```groovy
-implementation 'com.natigbabayev.checkpoint:core:x.y.z'
+implementation 'com.natigbabayev.checkpoint:checkpoint-core:x.y.z'
 ```
 
 (Please replace `x`, `y` and `z` with the latest version numbers: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core)
@@ -39,23 +39,18 @@ Checkpoint allows you to perform validation checks for given input. [`Checkpoint
 
 ```kotlin
 fun main() {
-    val pinCheckpoint = Checkpoint.Builder<String>()
+    val pinCheckpoint = Checkpoint.Builder<CharSequence>()
         .addRule(
-            DefaultRuleBuilder<String>()
-                .isValid { it.length >= 4 }
-                .whenInvalid { println("Must contain min. 4 characters") }
+            LengthRangeRule.Builder()
+                .minLength(4)
+                .maxLength(6)
+                .whenInvalid { println("Must contain min. 4, max 6 characters") }
                 .build()
         )
         .addRule(
-            DefaultRuleBuilder<String>()
+            DefaultRuleBuilder<CharSequence>()
                 .isValid { it.contains("@") || it.contains("!") }
                 .whenInvalid { println("Must contain at least one of the @ or ! characters.") }
-                .build()
-        )
-        .addRule(
-            DefaultRuleBuilder<String>()
-                .isValid { it.length <= 6 }
-                .whenInvalid { println("Must contain max. 6 characters") }
                 .build()
         )
         .build()
@@ -72,20 +67,15 @@ fun main() {
 
 ```kotlin
 fun main() {
-    val pinCheckpoint = checkpoint<String> {
-        addRule {
-            isValid { it.length >= 4 }
-            whenInvalid { println("Must contain min. 4 characters") }
-        }
-
+    val pinCheckpoint = checkpoint<CharSequence> {
+        addRule(
+            lengthRangeRule(minLength = 4, maxLength = 6) {
+                println("Must contain min. 4, max 6 characters")
+            }
+        )
         addRule {
             isValid { it.contains("@") || it.contains("!") }
             whenInvalid { println("Must contain at least one of the @ or ! characters.") }
-        }
-
-        addRule {
-            isValid { it.length <= 6 }
-            whenInvalid { println("Must contain max. 6 characters") }
         }
     }
 

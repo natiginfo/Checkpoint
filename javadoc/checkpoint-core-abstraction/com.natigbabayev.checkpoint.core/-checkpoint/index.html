@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Checkpoint - checkpoint-core-abstraction</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">checkpoint-core-abstraction</a>&nbsp;/&nbsp;<a href="../index.html">com.natigbabayev.checkpoint.core</a>&nbsp;/&nbsp;<a href="./index.html">Checkpoint</a><br/>
+<br/>
+<h1>Checkpoint</h1>
+<code><span class="keyword">class </span><span class="identifier">Checkpoint</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-default-rule/index.html"><span class="identifier">DefaultRule</span></a><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span></code>
+<p>Child of <a href="../-default-rule/index.html">DefaultRule</a> which accepts list of <a href="../-default-rule/index.html">DefaultRule</a>.
+When <a href="../-default-rule/can-pass.html">Checkpoint.canPass</a> is invoked, function will go through all of the passed rules
+and invoke <a href="../-default-rule/can-pass.html">DefaultRule.canPass</a> of each rule until first item that cannot pass.
+Create instance of class using <a href="-builder/index.html">Checkpoint.Builder</a> or <a href="../checkpoint.html">checkpoint</a> dsl.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-builder/index.html">Builder</a></h4>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Builder</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="callback.html">callback</a></h4>
+</td>
+<td>
+<p>Callback which is used by <a href="../-rule/invoke-callback.html">Rule.invokeCallback</a> when <a href="../-rule/is-valid.html">Rule.isValid</a> returns false</p>
+<code><span class="keyword">val </span><span class="identifier">callback</span><span class="symbol">: </span><span class="identifier">Callback</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="is-valid.html">isValid</a></h4>
+</td>
+<td>
+<p>Function used to define whether a condition is satisfied with given input.
+Typically, this function should be invoked from <a href="../-rule/can-pass.html">Rule.canPass</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">isValid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.Checkpoint$isValid(com.natigbabayev.checkpoint.core.Checkpoint.INPUT)/input">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">INPUT</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

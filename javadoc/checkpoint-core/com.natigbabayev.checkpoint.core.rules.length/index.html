@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.natigbabayev.checkpoint.core.rules.length - checkpoint-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">checkpoint-core</a>&nbsp;/&nbsp;<a href="./index.html">com.natigbabayev.checkpoint.core.rules.length</a><br/>
+<br/>
+<h2>Package com.natigbabayev.checkpoint.core.rules.length</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-exact-length-rule/index.html">ExactLengthRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input's length is equal to required length.</p>
+<code><span class="keyword">class </span><span class="identifier">ExactLengthRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-length-range-rule/index.html">LengthRangeRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input's length is in given range.</p>
+<code><span class="keyword">class </span><span class="identifier">LengthRangeRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-max-length-rule/index.html">MaxLengthRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input's length is less than or equal to required length.</p>
+<code><span class="keyword">class </span><span class="identifier">MaxLengthRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-min-length-rule/index.html">MinLengthRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input's length is more than or equal to required length.</p>
+<code><span class="keyword">class </span><span class="identifier">MinLengthRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-not-blank-rule/index.html">NotBlankRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input is blank. Uses <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/is-not-blank.html">CharSequence.isNotBlank</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">NotBlankRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-not-empty-rule/index.html">NotEmptyRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input is empty. Uses <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/is-not-empty.html">CharSequence.isNotEmpty</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">NotEmptyRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="exact-length-rule.html">exactLengthRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">exactLengthRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$exactLengthRule(kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/length">length</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$exactLengthRule(kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-exact-length-rule/index.html"><span class="identifier">ExactLengthRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">exactLengthRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$exactLengthRule(kotlin.Int)/length">length</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-exact-length-rule/index.html"><span class="identifier">ExactLengthRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="length-range-rule.html">lengthRangeRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">lengthRangeRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$lengthRangeRule(kotlin.Int, kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/minLength">minLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$lengthRangeRule(kotlin.Int, kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/maxLength">maxLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Int.MAX_VALUE<span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$lengthRangeRule(kotlin.Int, kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-length-range-rule/index.html"><span class="identifier">LengthRangeRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">lengthRangeRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$lengthRangeRule(kotlin.Int, kotlin.Int)/minLength">minLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$lengthRangeRule(kotlin.Int, kotlin.Int)/maxLength">maxLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Int.MAX_VALUE<span class="symbol">)</span><span class="symbol">: </span><a href="-length-range-rule/index.html"><span class="identifier">LengthRangeRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="max-length-rule.html">maxLengthRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">maxLengthRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$maxLengthRule(kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/maxLength">maxLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$maxLengthRule(kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-max-length-rule/index.html"><span class="identifier">MaxLengthRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">maxLengthRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$maxLengthRule(kotlin.Int)/maxLength">maxLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-max-length-rule/index.html"><span class="identifier">MaxLengthRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="min-length-rule.html">minLengthRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">minLengthRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$minLengthRule(kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/minLength">minLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$minLengthRule(kotlin.Int, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-min-length-rule/index.html"><span class="identifier">MinLengthRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">minLengthRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$minLengthRule(kotlin.Int)/minLength">minLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-min-length-rule/index.html"><span class="identifier">MinLengthRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="not-blank-rule.html">notBlankRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">notBlankRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$notBlankRule(kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-not-blank-rule/index.html"><span class="identifier">NotBlankRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">notBlankRule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-not-blank-rule/index.html"><span class="identifier">NotBlankRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="not-empty-rule.html">notEmptyRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">notEmptyRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$notEmptyRule(kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-not-empty-rule/index.html"><span class="identifier">NotEmptyRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">notEmptyRule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-not-empty-rule/index.html"><span class="identifier">NotEmptyRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="when-invalid.html">whenInvalid</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$whenInvalid(com.natigbabayev.checkpoint.core.rules.length.ExactLengthRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$whenInvalid(com.natigbabayev.checkpoint.core.rules.length.LengthRangeRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$whenInvalid(com.natigbabayev.checkpoint.core.rules.length.MaxLengthRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$whenInvalid(com.natigbabayev.checkpoint.core.rules.length.MinLengthRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$whenInvalid(com.natigbabayev.checkpoint.core.rules.length.NotBlankRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.length$whenInvalid(com.natigbabayev.checkpoint.core.rules.length.NotEmptyRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
