@@ -12,10 +12,8 @@ inline fun ExactLengthRule.Builder.whenInvalid(crossinline block: (input: CharSe
 }
 
 /**
- * Executes the given builder block.
- *
  * @param whenInvalid a lambda which will be invoked when [ExactLengthRule.canPass] returns false.
- * @return returns instance of [ExactLengthRule]
+ * @return instance of [ExactLengthRule]
  */
 inline fun exactLengthRule(
     length: Int,

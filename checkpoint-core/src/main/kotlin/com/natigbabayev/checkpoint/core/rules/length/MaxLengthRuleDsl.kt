@@ -12,10 +12,8 @@ inline fun MaxLengthRule.Builder.whenInvalid(crossinline block: (CharSequence) -
 }
 
 /**
- * Executes the given builder block.
- *
  * @param whenInvalid a lambda which will be invoked when [MaxLengthRule.canPass] returns false.
- * @return returns instance of [MaxLengthRule]
+ * @return instance of [MaxLengthRule]
  */
 inline fun maxLengthRule(
     maxLength: Int,

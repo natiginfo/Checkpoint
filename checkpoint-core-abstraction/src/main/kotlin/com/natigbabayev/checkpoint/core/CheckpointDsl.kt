@@ -9,7 +9,7 @@ annotation class CheckpointDslMarker
  * Executes the given builder block.
  *
  * @param init builder block.
- * @return returns instance of [Checkpoint]
+ * @return instance of [Checkpoint]
  */
 inline fun <T> checkpoint(init: Checkpoint.Builder<T>.() -> Unit): Checkpoint<T> {
     val builder = Checkpoint.Builder<T>()

@@ -12,10 +12,8 @@ inline fun LengthRangeRule.Builder.whenInvalid(crossinline block: (input: CharSe
 }
 
 /**
- * Executes the given builder block.
- *
  * @param whenInvalid a lambda which will be invoked when [LengthRangeRule.canPass] returns false.
- * @return returns instance of [LengthRangeRule]
+ * @return instance of [LengthRangeRule]
  */
 inline fun lengthRangeRule(
     minLength: Int = 0,
