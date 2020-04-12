@@ -51,12 +51,14 @@ jobs:
         run: |
           chmod +x .scripts/publish_to_maven.sh
           .scripts/publish_to_maven.sh "STAGING"
+          mkdir javadocJars
+          find . -name \*-javadoc.jar -exec cp {} javadocJars \;
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
         with:
-          name: libs
-          path: build/libs
+          name: javadocJars
+          path: javadocJars
 
       - name: Upload Readme
         uses: actions/upload-artifact@v1
@@ -74,7 +76,7 @@ jobs:
 
       - uses: actions/download-artifact@v1
         with:
-          name: libs
+          name: javadocJars
 
       - uses: actions/download-artifact@v1
         with:
@@ -84,8 +86,8 @@ jobs:
         run: |
           rm -rf javadoc
           mkdir javadoc
-          unzip libs/core-*-javadoc.jar -d javadoc
-          rm -rf libs
+          find javadocJars -name \*-javadoc.jar -exec unzip -o {} -d javadoc \;
+          rm -rf javadocJars
 
       - name: Commit changes
         run: |
