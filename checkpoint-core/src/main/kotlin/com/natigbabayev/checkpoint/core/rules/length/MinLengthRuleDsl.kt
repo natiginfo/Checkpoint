@@ -24,3 +24,13 @@ inline fun minLengthRule(
         .whenInvalid(Rule.Callback { whenInvalid(it) })
     return builder.build()
 }
+
+/**
+ * @return instance of [MinLengthRule] without any callback.
+ */
+fun minLengthRule(minLength: Int): MinLengthRule {
+    val builder = MinLengthRule.Builder()
+        .minLength(minLength)
+
+    return builder.build()
+}

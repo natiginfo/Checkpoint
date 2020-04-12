@@ -14,7 +14,7 @@ class NotEmptyRule private constructor(
     class Builder {
         private var callback: Callback<CharSequence>? = null
 
-        fun whenInvalid(callback: Callback<CharSequence>) = apply { this.callback = callback }
+        fun whenInvalid(callback: Callback<CharSequence>?) = apply { this.callback = callback }
 
         fun build() = NotEmptyRule(callback)
     }

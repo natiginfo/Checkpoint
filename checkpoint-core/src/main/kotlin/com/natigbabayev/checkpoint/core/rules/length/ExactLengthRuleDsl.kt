@@ -25,3 +25,13 @@ inline fun exactLengthRule(
 
     return builder.build()
 }
+
+/**
+ * @return instance of [ExactLengthRule] without any callback.
+ */
+fun exactLengthRule(length: Int): ExactLengthRule {
+    val builder = ExactLengthRule.Builder()
+        .length(length)
+
+    return builder.build()
+}

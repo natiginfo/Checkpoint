@@ -24,3 +24,13 @@ inline fun maxLengthRule(
         .whenInvalid(Rule.Callback { whenInvalid(it) })
     return builder.build()
 }
+
+/**
+ * @return instance of [MaxLengthRule] without any callback.
+ */
+fun maxLengthRule(maxLength: Int): MaxLengthRule {
+    val builder = MaxLengthRule.Builder()
+        .maxLength(maxLength)
+
+    return builder.build()
+}

@@ -25,7 +25,7 @@ inline fun notBlankRule(
 }
 
 /**
- * @return instance of [NotBlankRule] without any callback
+ * @return instance of [NotBlankRule] without any callback.
  */
 fun notBlankRule(): NotBlankRule {
     val builder = NotBlankRule.Builder()

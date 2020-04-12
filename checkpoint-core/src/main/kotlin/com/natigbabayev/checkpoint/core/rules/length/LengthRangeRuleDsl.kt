@@ -26,3 +26,14 @@ inline fun lengthRangeRule(
         .whenInvalid(Rule.Callback { whenInvalid(it) })
     return builder.build()
 }
+
+/**
+ * @return instance of [LengthRangeRule] without any callback.
+ */
+fun lengthRangeRule(minLength: Int = 0, maxLength: Int = Int.MAX_VALUE): LengthRangeRule {
+    val builder = LengthRangeRule.Builder()
+        .minLength(minLength)
+        .maxLength(maxLength)
+
+    return builder.build()
+}
