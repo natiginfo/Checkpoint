@@ -1,7 +1,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/natiginfo/checkpoint/badge)](https://www.codefactor.io/repository/github/natiginfo/checkpoint)
 ![Snapshot CI](https://github.com/natiginfo/Checkpoint/workflows/Snapshot%20CI/badge.svg?branch=master)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core)
-
+[![Maven Central](https://img.shields.io/github/v/tag/natiginfo/Checkpoint)](https://search.maven.org/search?q=com.natigbabayev.checkpoint)
 
 # Checkpoint
 
@@ -15,7 +14,7 @@ Maven:
 ```xml
 <dependency>
   <groupId>com.natigbabayev.checkpoint</groupId>
-  <artifactId>core</artifactId>
+  <artifactId>checkpoint-core</artifactId>
   <version>x.y.z</version>
 </dependency>
 ```
@@ -25,7 +24,7 @@ Gradle:
 implementation 'com.natigbabayev.checkpoint:checkpoint-core:x.y.z'
 ```
 
-(Please replace `x`, `y` and `z` with the latest version numbers: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.natigbabayev.checkpoint/core)
+(Please replace `x`, `y` and `z` with the latest version numbers: ![Maven Central](https://img.shields.io/github/v/tag/natiginfo/Checkpoint)
 )
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
@@ -132,6 +131,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 [snap]: https://oss.sonatype.org/content/repositories/snapshots/
-[rule]: https://www.natigbabayev.com/Checkpoint/javadoc/core/com.natigbabayev.checkpoint.core/-rule/index.html
-[default-rule]: https://www.natigbabayev.com/Checkpoint/javadoc/core/com.natigbabayev.checkpoint.core/-default-rule/index.html
-[checkpoint]: https://www.natigbabayev.com/Checkpoint/javadoc/core/com.natigbabayev.checkpoint.core/-checkpoint/index.html
+[rule]: https://www.natigbabayev.com/Checkpoint/javadoc/checkpoint-core-abstraction/com.natigbabayev.checkpoint.core/-rule/index.html
+[default-rule]: https://www.natigbabayev.com/Checkpoint/javadoc/checkpoint-core-abstraction/com.natigbabayev.checkpoint.core/-default-rule/index.html
+[checkpoint]: https://www.natigbabayev.com/Checkpoint/javadoc/checkpoint-core-abstraction/com.natigbabayev.checkpoint.core/-checkpoint/index.html
