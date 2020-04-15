@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.3.0 *(2020-04-15)*
+
+* New rules!
+    * Added EmailRule
+    * Added PaymentCardRule
+* README improvements
+
 ## Version 0.2.0 *(2020-04-12)*
 
 * New rules!
