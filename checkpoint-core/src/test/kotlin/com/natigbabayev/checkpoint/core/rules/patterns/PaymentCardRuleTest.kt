@@ -3,7 +3,11 @@ package com.natigbabayev.checkpoint.core.rules.patterns
 import com.natigbabayev.checkpoint.core.Rule
 import com.natigbabayev.checkpoint.core.rules.patterns.PaymentCardRule.Builder
 import com.natigbabayev.checkpoint.core.rules.patterns.PaymentCardRule.CardType
-import io.mockk.*
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
+import io.mockk.verifySequence
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
