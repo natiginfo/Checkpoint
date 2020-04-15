@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.natigbabayev.checkpoint.core.rules.patterns - checkpoint-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">checkpoint-core</a>&nbsp;/&nbsp;<a href="./index.html">com.natigbabayev.checkpoint.core.rules.patterns</a><br/>
+<br/>
+<h2>Package com.natigbabayev.checkpoint.core.rules.patterns</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-email-rule/index.html">EmailRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input is valid email.</p>
+<code><span class="keyword">class </span><span class="identifier">EmailRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-payment-card-rule/index.html">PaymentCardRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if input is valid payment card number.
+Validation is done against <a href="-payment-card-rule/-card-type/card-number-pattern.html">CardType.cardNumberPattern</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">PaymentCardRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="email-rule.html">emailRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">emailRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.patterns$emailRule(kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-email-rule/index.html"><span class="identifier">EmailRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">emailRule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-email-rule/index.html"><span class="identifier">EmailRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="payment-card-rule.html">paymentCardRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">paymentCardRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.patterns$paymentCardRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.rules.patterns.PaymentCardRule.CardType)), kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/acceptedCardTypes">acceptedCardTypes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">CardType</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.patterns$paymentCardRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.rules.patterns.PaymentCardRule.CardType)), kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-payment-card-rule/index.html"><span class="identifier">PaymentCardRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">paymentCardRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.patterns$paymentCardRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.rules.patterns.PaymentCardRule.CardType)))/acceptedCardTypes">acceptedCardTypes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">CardType</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="-payment-card-rule/index.html"><span class="identifier">PaymentCardRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="when-invalid.html">whenInvalid</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.patterns$whenInvalid(com.natigbabayev.checkpoint.core.rules.patterns.EmailRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules.patterns$whenInvalid(com.natigbabayev.checkpoint.core.rules.patterns.PaymentCardRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
