@@ -6,7 +6,7 @@ import java.util.regex.Pattern.compile
 /**
  * Rule for validating if given input is valid email.
  */
-class EmailRule(
+class EmailRule private constructor(
     override val callback: Callback<CharSequence>?
 ) : DefaultRule<CharSequence>() {
 
