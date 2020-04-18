@@ -5,8 +5,7 @@ package com.natigbabayev.checkpoint.core.rules.patterns
 import com.natigbabayev.checkpoint.core.Rule
 
 /**
- * @param block a lambda which will be invoked
- *              when [PaymentCardRule.canPass] returns false.
+ * @param block a lambda which will be invoked when [PaymentCardRule.canPass] returns false.
  */
 inline fun PaymentCardRule.Builder.whenInvalid(
     crossinline block: (input: CharSequence) -> Unit
