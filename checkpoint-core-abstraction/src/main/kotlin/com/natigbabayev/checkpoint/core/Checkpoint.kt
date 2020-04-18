@@ -25,7 +25,7 @@ class Checkpoint<INPUT> private constructor(
         fun addRule(rule: DefaultRule<INPUT>) = this.apply { this.rules += rule }
 
         fun build(): Checkpoint<INPUT> {
-            check(rules.isNotEmpty()) { "You should set at least 1 rule." }
+            require(rules.isNotEmpty()) { "You should set at least 1 rule." }
             return Checkpoint(rules = rules)
         }
     }

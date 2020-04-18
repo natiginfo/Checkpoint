@@ -23,7 +23,7 @@ class DefaultRuleBuilder<INPUT> {
     }
 
     fun build(): DefaultRule<INPUT> {
-        check(predicate != null) { "You must set predicate using isValid() function." }
+        require(predicate != null) { "You must set predicate using isValid() function." }
         return object : DefaultRule<INPUT>() {
             override val callback: Callback<INPUT>? = this@DefaultRuleBuilder.callback
             override fun isValid(input: INPUT): Boolean = predicate!!(input)
