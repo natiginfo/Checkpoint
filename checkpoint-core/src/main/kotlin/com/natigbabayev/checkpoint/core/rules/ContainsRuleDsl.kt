@@ -43,4 +43,3 @@ fun containsRule(
 
     return builder.build()
 }
-

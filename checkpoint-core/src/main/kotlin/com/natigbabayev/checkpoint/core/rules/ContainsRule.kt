@@ -42,6 +42,5 @@ class ContainsRule private constructor(
                 callback = callback
             )
         }
-
     }
 }
