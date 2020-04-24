@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-internal class EitherRuleTest {
+internal class AnyRuleTest {
 
     @Suppress("PrivatePropertyName")
-    private lateinit var SUT: EitherRule<CharSequence>
+    private lateinit var SUT: AnyRule<CharSequence>
 
     // region Mocks
     private val mockCallback: Rule.Callback<CharSequence> = mockk()
@@ -24,7 +24,7 @@ internal class EitherRuleTest {
 
     @BeforeEach
     fun setup() {
-        SUT = EitherRule.Builder<CharSequence>()
+        SUT = AnyRule.Builder<CharSequence>()
             .addRules(mockRules)
             .whenInvalid(mockCallback)
             .build()

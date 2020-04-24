@@ -8,7 +8,7 @@ import io.mockk.mockkConstructor
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 
-internal class EitherRuleDslTest {
+internal class AnyRuleDslTest {
     // region Mocks
     private val mockWhenInvalid: (CharSequence) -> Unit = mockk()
     // endregion
@@ -16,39 +16,39 @@ internal class EitherRuleDslTest {
     @Test
     fun givenParameters_whenEitherRuleCalled_thenPassesParametersToBuilder() {
         // Arrange
-        mockkConstructor(EitherRule.Builder::class)
+        mockkConstructor(AnyRule.Builder::class)
         val rules = listOf<DefaultRule<CharSequence>>(mockk(), mockk(), mockk())
         // Act
-        eitherRule(rules)
+        anyRule(rules)
         // Assert
-        verify { anyConstructed<EitherRule.Builder<CharSequence>>().addRules(rules) }
+        verify { anyConstructed<AnyRule.Builder<CharSequence>>().addRules(rules) }
     }
 
     @Test
     fun givenParametersAndCallback_whenEitherRuleCalled_thenPassesParametersToBuilder() {
         // Arrange
-        mockkConstructor(EitherRule.Builder::class)
+        mockkConstructor(AnyRule.Builder::class)
         val rules = listOf<DefaultRule<CharSequence>>(mockk(), mockk(), mockk())
         // Act
-        eitherRule(rules, mockWhenInvalid)
+        anyRule(rules, mockWhenInvalid)
         // Assert
         val capturedCallback = mutableListOf<Rule.Callback<CharSequence>>()
-        verify { anyConstructed<EitherRule.Builder<CharSequence>>().addRules(rules) }
-        verify { anyConstructed<EitherRule.Builder<CharSequence>>().whenInvalid(capture(capturedCallback)) }
+        verify { anyConstructed<AnyRule.Builder<CharSequence>>().addRules(rules) }
+        verify { anyConstructed<AnyRule.Builder<CharSequence>>().whenInvalid(capture(capturedCallback)) }
     }
 
     @Test
     fun givenParametersAndCallback_whenWhenInvalidCalled_thenInvokesLambda() {
         // Arrange
         every { mockWhenInvalid(any()) } answers { nothing }
-        mockkConstructor(EitherRule.Builder::class)
+        mockkConstructor(AnyRule.Builder::class)
         val rules = listOf<DefaultRule<CharSequence>>(mockk(), mockk(), mockk())
         val input = "input"
         // Act
-        eitherRule(rules, mockWhenInvalid)
+        anyRule(rules, mockWhenInvalid)
         // Assert
         val capturedCallback = mutableListOf<Rule.Callback<CharSequence>>()
-        verify { anyConstructed<EitherRule.Builder<CharSequence>>().whenInvalid(capture(capturedCallback)) }
+        verify { anyConstructed<AnyRule.Builder<CharSequence>>().whenInvalid(capture(capturedCallback)) }
         capturedCallback.single().whenInvalid(input)
         verify { mockWhenInvalid(input) }
     }

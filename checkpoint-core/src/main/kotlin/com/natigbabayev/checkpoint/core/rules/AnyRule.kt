@@ -5,7 +5,7 @@ import com.natigbabayev.checkpoint.core.DefaultRule
 /**
  * Rule for validating if any of given rules can pass.
  */
-class EitherRule<INPUT> private constructor(
+class AnyRule<INPUT> private constructor(
     private val rules: List<DefaultRule<INPUT>>,
     override val callback: Callback<INPUT>?
 ) : DefaultRule<INPUT>() {
@@ -28,6 +28,6 @@ class EitherRule<INPUT> private constructor(
             this.callback = callback
         }
 
-        fun build() = EitherRule(rules = rules, callback = callback)
+        fun build() = AnyRule(rules = rules, callback = callback)
     }
 }
