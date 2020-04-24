@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>containsRule - checkpoint-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">checkpoint-core</a>&nbsp;/&nbsp;<a href="index.html">com.natigbabayev.checkpoint.core.rules</a>&nbsp;/&nbsp;<a href="./contains-rule.html">containsRule</a><br/>
+<br/>
+<h1>containsRule</h1>
+<a name="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="identifier">containsRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/ignoreCase">ignoreCase</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">, </span><span class="keyword">crossinline</span> <span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-contains-rule/index.html"><span class="identifier">ContainsRule</span></a></code>
+<h3>Parameters</h3>
+<p><a name="whenInvalid"></a>
+<code>whenInvalid</code> - a lambda which will be invoked, when <a href="#">ContainsRule.canPass</a> returns false.</p>
+<p><strong>Return</strong><br/>
+instance of <a href="-contains-rule/index.html">ContainsRule</a></p>
+<a name="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean)"></a>
+<code><span class="keyword">fun </span><span class="identifier">containsRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean)/ignoreCase">ignoreCase</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="-contains-rule/index.html"><span class="identifier">ContainsRule</span></a></code>
+<p><strong>Return</strong><br/>
+new instance of <a href="-contains-rule/index.html">ContainsRule</a> without any callback.</p>
+</BODY>
+</HTML>

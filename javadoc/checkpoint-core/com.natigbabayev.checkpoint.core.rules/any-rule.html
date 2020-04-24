@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>anyRule - checkpoint-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">checkpoint-core</a>&nbsp;/&nbsp;<a href="index.html">com.natigbabayev.checkpoint.core.rules</a>&nbsp;/&nbsp;<a href="./any-rule.html">anyRule</a><br/>
+<br/>
+<h1>anyRule</h1>
+<a name="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))), kotlin.Function1((com.natigbabayev.checkpoint.core.rules.anyRule.T, kotlin.Unit)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">anyRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))), kotlin.Function1((com.natigbabayev.checkpoint.core.rules.anyRule.T, kotlin.Unit)))/rules">rules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">crossinline</span> <span class="identifier" id="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))), kotlin.Function1((com.natigbabayev.checkpoint.core.rules.anyRule.T, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-any-rule/index.html"><span class="identifier">AnyRule</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<h3>Parameters</h3>
+<p><a name="whenInvalid"></a>
+<code>whenInvalid</code> - a lambda which will be invoked, when <a href="#">AnyRule.canPass</a> returns false.</p>
+<p><strong>Return</strong><br/>
+instance of <a href="-any-rule/index.html">AnyRule</a></p>
+<a name="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">anyRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))))/rules">rules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-any-rule/index.html"><span class="identifier">AnyRule</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p><strong>Return</strong><br/>
+new instance of <a href="-any-rule/index.html">AnyRule</a> without any callback.</p>
+</BODY>
+</HTML>

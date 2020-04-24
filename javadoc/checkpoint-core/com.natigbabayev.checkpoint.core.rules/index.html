@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.natigbabayev.checkpoint.core.rules - checkpoint-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">checkpoint-core</a>&nbsp;/&nbsp;<a href="./index.html">com.natigbabayev.checkpoint.core.rules</a><br/>
+<br/>
+<h2>Package com.natigbabayev.checkpoint.core.rules</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-any-rule/index.html">AnyRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if any of given rules can pass.</p>
+<code><span class="keyword">class </span><span class="identifier">AnyRule</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-contains-rule/index.html">ContainsRule</a></h4>
+</td>
+<td>
+<p>Rule for validating if given input contains <a href="#">ContainsRule.other</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">ContainsRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="any-rule.html">anyRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">anyRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))), kotlin.Function1((com.natigbabayev.checkpoint.core.rules.anyRule.T, kotlin.Unit)))/rules">rules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))), kotlin.Function1((com.natigbabayev.checkpoint.core.rules.anyRule.T, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-any-rule/index.html"><span class="identifier">AnyRule</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">anyRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$anyRule(kotlin.collections.List((com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rules.anyRule.T)))))/rules">rules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">DefaultRule</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-any-rule/index.html"><span class="identifier">AnyRule</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="contains-rule.html">containsRule</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">containsRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/ignoreCase">ignoreCase</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/whenInvalid">whenInvalid</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-contains-rule/index.html"><span class="identifier">ContainsRule</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">containsRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$containsRule(kotlin.String, kotlin.Boolean)/ignoreCase">ignoreCase</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="-contains-rule/index.html"><span class="identifier">ContainsRule</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="when-invalid.html">whenInvalid</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">Builder</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$whenInvalid(com.natigbabayev.checkpoint.core.rules.AnyRule.Builder((com.natigbabayev.checkpoint.core.rules.whenInvalid.T)), kotlin.Function1((com.natigbabayev.checkpoint.core.rules.whenInvalid.T, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Builder</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rules$whenInvalid(com.natigbabayev.checkpoint.core.rules.ContainsRule.Builder, kotlin.Function1((kotlin.CharSequence, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
