@@ -1,5 +1,13 @@
 # Change Log
 
+## Version 0.4.0 *(2020-04-24)*
+
+* New rules!
+    * Added RegexRule
+    * Added ContainsRule
+    * Added AnyRule
+* Javadoc improvements
+
 ## Version 0.3.0 *(2020-04-15)*
 
 * New rules!
