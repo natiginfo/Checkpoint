@@ -2,9 +2,6 @@
 
 package com.natigbabayev.checkpoint.core
 
-@DslMarker
-annotation class CheckpointDslMarker
-
 /**
  * Executes the given builder block.
  *
