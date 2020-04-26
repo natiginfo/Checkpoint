@@ -4,6 +4,7 @@ import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
@@ -74,11 +75,11 @@ internal class DefaultRuleTest {
         @Test
         fun whenCanPassCalled_thenReturnsTrue() {
             // Arrange
-            SUT._isValid = false
+            SUT._isValid = true
             // Act
             val canPass = SUT.canPass("input")
             // Assert
-            assertFalse(canPass)
+            assertTrue(canPass)
         }
     }
 }
