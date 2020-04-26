@@ -26,7 +26,6 @@ class SingleCheckpoint<INPUT> private constructor(
             .toSingle(false)
     }
 
-
     @SingleCheckpointDslMarker
     class Builder<INPUT> {
         private val rules = mutableListOf<SingleRule<INPUT>>()

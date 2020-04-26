@@ -6,7 +6,7 @@ import io.reactivex.Single
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-internal class CheckpointTest {
+internal class SingleCheckpointTest {
 
     @Suppress("PrivatePropertyName")
     private lateinit var SUT: SingleCheckpoint<CharSequence>
