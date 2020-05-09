@@ -1,37 +1,37 @@
-package com.natigbabayev.checkpoint.core
+package com.natigbabayev.checkpoint.core.rxjava2
 
+import com.natigbabayev.checkpoint.core.Rule
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import io.reactivex.Single
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-internal class TestableDefaultRule(override val callback: Callback<String>?) : DefaultRule<String>() {
+internal class TestableSingleRule(override val callback: Callback<CharSequence>?) : SingleRule<CharSequence>() {
 
     @Suppress("PropertyName")
     var _isValid: Boolean = false
 
-    override fun isValid(input: String): Boolean {
-        return _isValid
+    override fun isValid(input: CharSequence): Single<Boolean> {
+        return Single.just(_isValid)
     }
 }
 
 internal class DefaultRuleTest {
 
     @Suppress("PrivatePropertyName")
-    private lateinit var SUT: TestableDefaultRule
+    private lateinit var SUT: TestableSingleRule
 
     // region Mocks
-    private val mockCallback = mockk<Rule.Callback<String>>()
+    private val mockCallback = mockk<Rule.Callback<CharSequence>>()
     // endregion
 
     @BeforeEach
     fun setup() {
-        SUT = TestableDefaultRule(mockCallback)
+        SUT = TestableSingleRule(mockCallback)
         every { mockCallback.whenInvalid(any()) } answers { nothing }
     }
 
@@ -43,7 +43,7 @@ internal class DefaultRuleTest {
             // Arrange
             SUT._isValid = false
             // Act
-            SUT.canPass("input")
+            SUT.canPass("input").test()
             // Assert
             verify(exactly = 1) { mockCallback.whenInvalid("input") }
         }
@@ -53,9 +53,9 @@ internal class DefaultRuleTest {
             // Arrange
             SUT._isValid = false
             // Act
-            val canPass = SUT.canPass("input")
+            val result = SUT.canPass("input").test()
             // Assert
-            assertFalse(canPass)
+            result.assertValue(false)
         }
     }
 
@@ -67,7 +67,7 @@ internal class DefaultRuleTest {
             // Arrange
             SUT._isValid = true
             // Act
-            SUT.canPass("input")
+            SUT.canPass("input").test()
             // Assert
             verify(exactly = 0) { mockCallback.whenInvalid("input") }
         }
@@ -77,9 +77,9 @@ internal class DefaultRuleTest {
             // Arrange
             SUT._isValid = true
             // Act
-            val canPass = SUT.canPass("input")
+            val result = SUT.canPass("input").test()
             // Assert
-            assertTrue(canPass)
+            result.assertValue(true)
         }
     }
 }

@@ -20,9 +20,13 @@ class Checkpoint<INPUT> private constructor(
     class Builder<INPUT> {
         private val rules = mutableListOf<DefaultRule<INPUT>>()
 
-        fun addRules(rules: List<DefaultRule<INPUT>>) = this.apply { this.rules += rules }
+        fun addRules(rules: List<DefaultRule<INPUT>>) = apply {
+            this.rules += rules
+        }
 
-        fun addRule(rule: DefaultRule<INPUT>) = this.apply { this.rules += rule }
+        fun addRule(rule: DefaultRule<INPUT>) = apply {
+            this.rules += rule
+        }
 
         fun build(): Checkpoint<INPUT> {
             require(rules.isNotEmpty()) { "You should set at least 1 rule." }
