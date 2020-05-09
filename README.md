@@ -14,13 +14,20 @@ Maven:
 <dependency>
   <groupId>com.natigbabayev.checkpoint</groupId>
   <artifactId>checkpoint-core</artifactId>
-  <version>0.4.0</version>
+  <version>0.5.0</version>
 </dependency>
 ```
 
 Gradle:
+
+Core:
 ```groovy
-implementation 'com.natigbabayev.checkpoint:checkpoint-core:0.4.0'
+implementation 'com.natigbabayev.checkpoint:checkpoint-core:0.5.0'
+```
+
+RxJava2:
+```groovy
+implementation 'com.natigbabayev.checkpoint:checkpoint-rxjava2:0.5.0'
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
@@ -28,7 +35,30 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
 ### Usage
 
 Checkpoint allows you to perform validation checks for given input. [`Checkpoint`][checkpoint] is generic collection of 
-[rules with boolean output][default-rule]. You can create new instance of Checkpoint either by using builder or DSL:
+[rules with boolean output][default-rule]. You can create a new instance of Checkpoint either by using builder or DSL:
+
+#### DSL
+
+```kotlin
+fun main() {
+    val pinCheckpoint = checkpoint<CharSequence> {
+        addRule(
+            lengthRangeRule(minLength = 4, maxLength = 6) {
+                println("Must contain min. 4, max 6 characters")
+            }
+        )
+        addRule {
+            isValid { it.contains("@") || it.contains("!") }
+            whenInvalid { println("Must contain at least one of the @ or ! characters.") }
+        }
+    }
+
+    pinCheckpoint.canPass("123") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234@6!") // returns false and invokes whenInvalid()
+    pinCheckpoint.canPass("1234@6") // returns true
+}
+```
 
 #### Builder
 
@@ -49,30 +79,6 @@ fun main() {
                 .build()
         )
         .build()
-
-    pinCheckpoint.canPass("123") // returns false and invokes whenInvalid()
-    pinCheckpoint.canPass("1234") // returns false and invokes whenInvalid()
-    pinCheckpoint.canPass("1234@6!") // returns false and invokes whenInvalid()
-    pinCheckpoint.canPass("1234@6") // returns true
-}
-```
-
-
-#### DSL
-
-```kotlin
-fun main() {
-    val pinCheckpoint = checkpoint<CharSequence> {
-        addRule(
-            lengthRangeRule(minLength = 4, maxLength = 6) {
-                println("Must contain min. 4, max 6 characters")
-            }
-        )
-        addRule {
-            isValid { it.contains("@") || it.contains("!") }
-            whenInvalid { println("Must contain at least one of the @ or ! characters.") }
-        }
-    }
 
     pinCheckpoint.canPass("123") // returns false and invokes whenInvalid()
     pinCheckpoint.canPass("1234") // returns false and invokes whenInvalid()

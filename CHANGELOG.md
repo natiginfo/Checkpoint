@@ -1,5 +1,15 @@
 # Change Log
 
+## Version 0.5.0 *(2020-05-09)*
+
+* RxJava2 support:
+    * Added SingleRule
+    * Added SingleRuleBuilder
+    * Added SingleCheckpoint (dsl: `singleCheckpoint()`)
+    * Added `DefaultRule.canPassSingle(input)` extension function for
+    converting result of `DefaultRule.canPass(input)`
+    to `Single<Boolean>`
+
 ## Version 0.4.0 *(2020-04-24)*
 
 * New rules!

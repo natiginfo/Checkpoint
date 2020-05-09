@@ -10,7 +10,7 @@ import com.natigbabayev.checkpoint.core.Rule
  * @param init builder block.
  * @return instance of [SingleCheckpoint]
  */
-inline fun <T> checkpoint(init: SingleCheckpoint.Builder<T>.() -> Unit): SingleCheckpoint<T> {
+inline fun <T> singleCheckpoint(init: SingleCheckpoint.Builder<T>.() -> Unit): SingleCheckpoint<T> {
     val builder = SingleCheckpoint.Builder<T>()
     builder.init()
     return builder.build()

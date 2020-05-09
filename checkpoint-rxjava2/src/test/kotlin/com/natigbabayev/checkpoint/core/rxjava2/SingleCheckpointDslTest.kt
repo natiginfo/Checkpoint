@@ -32,7 +32,7 @@ internal class SingleCheckpointDslTest {
             .whenInvalid(mockWhenDefaultRuleInvalid)
             .build()
 
-        SUT = checkpoint {
+        SUT = singleCheckpoint {
             addRule(mockRule)
             addRule(fakeDefaultRule)
             addRule {
