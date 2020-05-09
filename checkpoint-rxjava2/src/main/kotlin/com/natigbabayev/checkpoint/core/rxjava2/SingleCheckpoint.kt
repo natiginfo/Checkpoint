@@ -23,9 +23,9 @@ class SingleCheckpoint<INPUT> private constructor(
 
         return Single.merge(canPassResult)
             .reduce { previous: Boolean, current: Boolean ->
-                val isAllValid = previous && current
-                check(isAllValid)
-                isAllValid
+                val areAllValid = previous && current
+                check(areAllValid)
+                areAllValid
             }
             .onErrorReturnItem(false)
             .toSingle(false)
