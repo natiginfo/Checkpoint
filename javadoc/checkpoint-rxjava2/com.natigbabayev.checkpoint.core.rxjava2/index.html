@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.natigbabayev.checkpoint.core.rxjava2 - checkpoint-rxjava2</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">checkpoint-rxjava2</a>&nbsp;/&nbsp;<a href="./index.html">com.natigbabayev.checkpoint.core.rxjava2</a><br/>
+<br/>
+<h2>Package com.natigbabayev.checkpoint.core.rxjava2</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-single-checkpoint/index.html">SingleCheckpoint</a></h4>
+</td>
+<td>
+<p>Child of <a href="-single-rule/index.html">SingleRule</a> which accepts list of <a href="-single-rule/index.html">SingleRule</a>.
+When <a href="-single-rule/can-pass.html">SingleCheckpoint.canPass</a> is invoked, function will go through all of the passed rules
+and invoke <a href="-single-rule/can-pass.html">SingleCheckpoint.canPass</a> of each rule until first item that cannot pass.
+Create instance of class using <a href="-single-checkpoint/-builder/index.html">SingleCheckpoint.Builder</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">SingleCheckpoint</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-single-rule/index.html"><span class="identifier">SingleRule</span></a><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-single-rule/index.html">SingleRule</a></h4>
+</td>
+<td>
+<p>Child of <a href="#">Rule</a> with <a href="#">Single</a> output.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">SingleRule</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Rule</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">,</span>&nbsp;<span class="identifier">Single</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-single-rule-builder/index.html">SingleRuleBuilder</a></h4>
+</td>
+<td>
+<p>Builder for creating instance of <a href="-single-rule/index.html">SingleRule</a> without extending it.</p>
+<code><span class="keyword">class </span><span class="identifier">SingleRuleBuilder</span><span class="symbol">&lt;</span><span class="identifier">INPUT</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-single-checkpoint-dsl-marker/index.html">SingleCheckpointDslMarker</a></h4>
+</td>
+<td>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">SingleCheckpointDslMarker</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="com.natigbabayev.checkpoint.core.-default-rule/index.html">com.natigbabayev.checkpoint.core.DefaultRule</a></h4>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="add-rule.html">addRule</a></h4>
+</td>
+<td>
+<p>Executes the given builder block and adds created rule to <a href="-single-checkpoint/-builder/index.html">SingleCheckpoint.Builder</a>.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">Builder</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">addRule</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rxjava2$addRule(com.natigbabayev.checkpoint.core.rxjava2.SingleCheckpoint.Builder((com.natigbabayev.checkpoint.core.rxjava2.addRule.T)), kotlin.Function1((com.natigbabayev.checkpoint.core.rxjava2.SingleRuleBuilder((com.natigbabayev.checkpoint.core.rxjava2.addRule.T)), kotlin.Unit)))/init">init</span><span class="symbol">:</span>&nbsp;<a href="-single-rule-builder/index.html"><span class="identifier">SingleRuleBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="single-checkpoint.html">singleCheckpoint</a></h4>
+</td>
+<td>
+<p>Executes the given builder block.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">singleCheckpoint</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rxjava2$singleCheckpoint(kotlin.Function1((com.natigbabayev.checkpoint.core.rxjava2.SingleCheckpoint.Builder((com.natigbabayev.checkpoint.core.rxjava2.singleCheckpoint.T)), kotlin.Unit)))/init">init</span><span class="symbol">:</span>&nbsp;<span class="identifier">Builder</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-single-checkpoint/index.html"><span class="identifier">SingleCheckpoint</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="when-invalid.html">whenInvalid</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-single-rule-builder/index.html"><span class="identifier">SingleRuleBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">whenInvalid</span><span class="symbol">(</span><span class="identifier" id="com.natigbabayev.checkpoint.core.rxjava2$whenInvalid(com.natigbabayev.checkpoint.core.rxjava2.SingleRuleBuilder((com.natigbabayev.checkpoint.core.rxjava2.whenInvalid.T)), kotlin.Function1((com.natigbabayev.checkpoint.core.rxjava2.whenInvalid.T, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-single-rule-builder/index.html"><span class="identifier">SingleRuleBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,4 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:com.natigbabayev.checkpoint.core.rxjava2$canPassSingle(com.natigbabayev.checkpoint.core.DefaultRule((com.natigbabayev.checkpoint.core.rxjava2.canPassSingle.T)), com.natigbabayev.checkpoint.core.rxjava2.canPassSingle.T)com.natigbabayev.checkpoint.core.rxjava2/com.natigbabayev.checkpoint.core.-default-rule/can-pass-single.html
+com.natigbabayev.checkpoint.core.rxjava2
