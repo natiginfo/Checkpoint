@@ -8,6 +8,7 @@ plugins {
     id("org.jetbrains.dokka") version "0.10.0"
     `maven-publish`
     signing
+    jacoco
 }
 
 subprojects {
@@ -15,6 +16,7 @@ subprojects {
     apply(plugin = "org.jetbrains.dokka")
     apply(plugin = "org.gradle.maven-publish")
     apply(plugin = "org.gradle.signing")
+    apply(plugin = "org.gradle.jacoco")
 
     // Configure existing Dokka task to output HTML to typical Javadoc directory
     tasks.dokka {
@@ -44,4 +46,8 @@ allprojects {
         mavenCentral()
         jcenter()
     }
+}
+
+jacoco {
+    toolVersion = "0.8.5"
 }
