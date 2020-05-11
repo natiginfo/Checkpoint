@@ -28,6 +28,12 @@ jobs:
       - name: Run tests
         run: ./gradlew test
 
+  code-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: codecov/codecov-action@v1
+
   publish:
     # We don't want to publish anything unless validate and test jobs pass.
     # Any failure of validate and test will prevent snapshot publishing.
