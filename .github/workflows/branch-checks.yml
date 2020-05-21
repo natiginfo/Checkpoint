@@ -21,6 +21,18 @@ jobs:
       - uses: vroy/gha-kotlin-linter@v2
       - uses: natiginfo/action-detekt-all@1.8.0
 
+  detekt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
+
+      - name: "detekt"
+        uses: natiginfo/action-detekt-all@1.8.0
+        with:
+          args: --fail-fast --config detekt.yml
+
   test:
     runs-on: ubuntu-latest
     steps:
