@@ -14,13 +14,13 @@ Maven:
 <dependency>
   <groupId>com.natigbabayev.checkpoint</groupId>
   <artifactId>checkpoint-core</artifactId>
-  <version>0.5.0</version>
+  <version>0.6.0</version>
 </dependency>
 <!-- Optional RxJava 2 support: -->
 <dependency>
   <groupId>com.natigbabayev.checkpoint</groupId>
   <artifactId>checkpoint-rxjava2</artifactId>
-  <version>0.5.0</version>
+  <version>0.6.0</version>
 </dependency>
 ```
 
@@ -28,9 +28,9 @@ Gradle:
 
 Core:
 ```groovy
-implementation 'com.natigbabayev.checkpoint:checkpoint-core:0.5.0'
+implementation 'com.natigbabayev.checkpoint:checkpoint-core:0.6.0'
 // Optional RxJava 2 support:
-implementation 'com.natigbabayev.checkpoint:checkpoint-rxjava2:0.5.0'
+implementation 'com.natigbabayev.checkpoint:checkpoint-rxjava2:0.6.0'
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
