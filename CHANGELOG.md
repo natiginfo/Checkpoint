@@ -1,5 +1,15 @@
 # Change Log
 
+## Version 0.6.0 *(2020-06-20)*
+
+* Added `newRule` and `newSingleRule` DSL functions for
+  creating new instance of `DefaultRule` and `SingleRule` without using builder.
+* Documentation updates
+* CI updates:
+    * Bump `detekt` version
+    * Add `jacoco` and `codecov` integrations
+    * Bump `Gradle` version to 6.4
+
 ## Version 0.5.0 *(2020-05-09)*
 
 * RxJava2 support:
