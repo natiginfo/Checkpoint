@@ -19,6 +19,21 @@ inline fun <T> AnyRule.Builder<T>.whenInvalid(
  * @return instance of [AnyRule]
  */
 inline fun <T> anyRule(
+    vararg rules: DefaultRule<T>,
+    crossinline whenInvalid: (input: T) -> Unit
+): AnyRule<T> {
+    val builder = AnyRule.Builder<T>()
+        .whenInvalid(Rule.Callback { whenInvalid(it) })
+        .addRules(rules.toList())
+
+    return builder.build()
+}
+
+/**
+ * @param whenInvalid a lambda which will be invoked, when [AnyRule.canPass] returns false.
+ * @return instance of [AnyRule]
+ */
+inline fun <T> anyRule(
     rules: List<DefaultRule<T>>,
     crossinline whenInvalid: (input: T) -> Unit
 ): AnyRule<T> {
