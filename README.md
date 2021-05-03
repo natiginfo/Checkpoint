@@ -3,7 +3,7 @@
 
 # Checkpoint
 
-Multipurpose and customizable validation library
+Multipurpose and customizable validation library.
 
 ## Getting started
 
