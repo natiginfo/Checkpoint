@@ -19,7 +19,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: gradle/wrapper-validation-action@v1
       - uses: vroy/gha-kotlin-linter@v2
-      - uses: natiginfo/action-detekt-all@1.9.1
+      - uses: natiginfo/action-detekt-all@1.19.0
+        with:
+          args: --excludes /github/workspace/build.gradle.kts
 
   test:
     runs-on: ubuntu-latest
