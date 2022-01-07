@@ -21,7 +21,7 @@ jobs:
       - uses: vroy/gha-kotlin-linter@v2
       - uses: natiginfo/action-detekt-all@1.19.0
         with:
-          args: --excludes build.gradle.kts
+          args: --excludes /github/workspace/build.gradle.kts
 
   test:
     runs-on: ubuntu-latest
